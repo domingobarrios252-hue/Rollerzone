@@ -42,7 +42,7 @@ var DB = {
     {num:6,titulo:'Invierno de Campeones',subtitulo:'Especial pista cubierta',precio:'6€',img:''},
     {num:7,titulo:'La Nueva Generación',subtitulo:'Patinaje español 2026',precio:'6€',img:''},
   ],
-  hero:{tag:'En Vivo · Abril 2026',titulo:'LAGOS 2026 <em>ARDE</em> EN LOS 500M',meta:'Speed Track European Series · <span>Portugal</span>',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje.',img:'https://domingobarrios252-hue.github.io/Rollerzone/images/hero.jpg',num:'01'},
+  hero:{tag:'En Vivo · Abril 2026',titulo:'LAGOS 2026 <em>ARDE</em> EN LOS 500M',meta:'Speed Track European Series · <span>Portugal</span>',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje.',img:'https://domingobarrios252-hue.github.io/rollerzone/images/hero.jpg',num:'01'},
   ticker:['Chevi Guzmán bate el récord de pista en 500m','Liga Nacional 3ª División · Jornada 4 en curso','Open Madrid 2026 · Inscripciones abiertas','Daniel Milagros convocado con la selección española','Adrián Alonso · Nuevo patrocinador con Bont Skates','Campeonato Internacional Bogotá · Resultados disponibles','Livio Wenger debuta en la Liga Nacional 2026'],
   nextId:20,
   eventosExpanded:false

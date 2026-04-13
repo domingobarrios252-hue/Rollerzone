@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RollerZone — Patinaje de Velocidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <span class="logo" onclick="goHome()">Roller<span>Zone</span></span>
+  <ul class="nav-links">
+    <li><a href="#" onclick="goHome()" class="active">Inicio</a></li>
+    <li><a href="#noticias" onclick="goHome()">Noticias</a></li>
+    <li><a href="#ranking" onclick="goHome()">Ranking</a></li>
+    <li><a href="#entrevistas" onclick="goHome()">Entrevistas</a></li>
+    <li><a href="#eventos" onclick="goHome()">Eventos</a></li>
+    <li><a href="#revista" onclick="goHome()">Revista</a></li>
+    <li><a href="#patrocinadores" onclick="goHome()">Patrocinadores</a></li>
+    <li><a href="#colaboradores" onclick="goHome()">Colaboradores</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-admin-btn" onclick="openAdmin()">
+      <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor" opacity=".7"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor" opacity=".7"/></svg>
+      Admin
+    </button>
+    <button class="nav-cta" onclick="showNewsletter()">Suscribirse</button>
+    <button class="hamburger" id="menuBtn" aria-label="Menú" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="goHome()">Inicio</a>
+  <a href="#noticias" onclick="goHome()">Noticias</a>
+  <a href="#ranking" onclick="goHome()">Ranking</a>
+  <a href="#entrevistas" onclick="goHome()">Entrevistas</a>
+  <a href="#eventos" onclick="goHome()">Eventos</a>
+  <a href="#revista" onclick="goHome()">Revista</a>
+  <a href="#patrocinadores" onclick="goHome()">Patrocinadores</a>
+  <a href="#colaboradores" onclick="goHome()">Colaboradores</a>
+</div>
+
+<!-- ================================================================
+     PÁGINA HOME
+     ================================================================ -->
+<div id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" id="portada">
+    <div class="hero-bg"></div>
+    <div id="hero-bg-img-wrap"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-number" id="hero-num">01</div>
+    <div class="hero-content">
+      <div class="hero-tag" id="hero-tag">EN DIRECTO</div>
+      <h1 class="hero-title" id="hero-title">LAGOS 2026 <em>ARDE</em> EN LOS 500M</h1>
+      <div class="hero-meta" id="hero-meta">Speed Track European Series · <span>Portugal</span></div>
+      <p class="hero-excerpt" id="hero-excerpt">Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje con actuaciones que ya son historia.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openFeaturedNews()">Leer noticia →</button>
+        <button class="btn-ghost" onclick="document.getElementById('eventos').scrollIntoView({behavior:'smooth'})">Ver eventos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-label="Noticias en tiempo real">
+    <div class="ticker-label">EN VIVO</div>
+    <div class="ticker-overflow">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+  </div>
+
+  <!-- NOTICIAS -->
+  <div id="noticias">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Últimas <em>Noticias</em></h2>
+        <span class="see-all" onclick="document.getElementById('more-news-section').scrollIntoView({behavior:'smooth'})">Ver todas →</span>
+      </div>
+      <div id="news-grid" class="reveal news-grid"></div>
+    </div>
+    <div class="section" style="padding-top:0;" id="more-news-section">
+      <div class="section-header reveal">
+        <h2 class="section-title"><em>Más</em> Noticias</h2>
+      </div>
+      <div id="more-news-grid" class="reveal reveal-delay-1 more-news-grid"></div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item reveal"><div class="stat-num" data-target="1247">0</div><div class="stat-label">Patinadores Activos</div></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-num" data-target="38">0</div><div class="stat-label">Competiciones 2026</div></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-num" data-target="17">0</div><div class="stat-label">Comunidades</div></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">Récords Nacionales</div></div>
+    </div>
+  </div>
+
+  <!-- EVENTOS (muestra 6, luego ver más) -->
+  <div id="eventos">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Próximos <em>Eventos</em></h2>
+        <span class="see-all" id="eventos-see-all" onclick="toggleVerMasEventos()">Ver todos →</span>
+      </div>
+      <div class="eventos-grid reveal" id="eventos-grid"></div>
+      <div class="eventos-show-more" id="eventos-show-more-btn" style="display:none;">
+        <button class="btn-show-more" onclick="toggleVerMasEventos()">
+          <span id="eventos-toggle-label">Ver más eventos ↓</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RANKING -->
+  <div class="ranking-section" id="ranking">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Ranking <em>MVP RollerZone Spain</em></h2>
+        <a class="see-all" href="#">Ranking completo →</a>
+      </div>
+      <div class="ranking-cat-selector">
+        <button class="ranking-cat-btn active" onclick="switchCat(this,'cat-elite')">Élite <span class="ranking-cat-badge badge-elite">TOP</span></button>
+        <button class="ranking-cat-btn" onclick="switchCat(this,'cat-estrella')">Estrella <span class="ranking-cat-badge badge-estrella">U23</span></button>
+        <button class="ranking-cat-btn" onclick="switchCat(this,'cat-promesa')">Promesa <span class="ranking-cat-badge badge-promesa">JR</span></button>
+      </div>
+      <div class="ranking-cat-panel active" id="cat-elite">
+        <div class="ranking-gender-tabs">
+          <button class="ranking-gender-tab active" onclick="switchGender(this,'elite-masc')">♂ Masculino</button>
+          <button class="ranking-gender-tab" onclick="switchGender(this,'elite-fem')">♀ Femenino</button>
+        </div>
+        <div class="ranking-gender-panel active" id="elite-masc">
+          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">👑</span><span class="ranking-mvp-label">Élite Masculino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
+          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinador</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
+            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Chevi Guzmán</div><div class="racer-club">Gijón Patín Club</div></td><td>Gijón PC</td><td><span class="pts">440</span></td><td><span class="delta up">↑ 3</span></td></tr>
+            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Daniel Milagros</div><div class="racer-club">Selección Nacional</div></td><td>CD Gijón</td><td><span class="pts">418</span></td><td><span class="delta up">↑ 1</span></td></tr>
+            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇨🇴 Juan P. Estrada</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">401</span></td><td><span class="delta same">—</span></td></tr>
+            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Adrián Alonso</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">385</span></td><td><span class="delta down">↓ 1</span></td></tr>
+            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇨🇭 Livio Wenger</div><div class="racer-club">Valencia Speed</div></td><td>Valencia S.</td><td><span class="pts">370</span></td><td><span class="delta up">↑ 2</span></td></tr>
+          </tbody></table></div>
+        </div>
+        <div class="ranking-gender-panel" id="elite-fem">
+          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">👑</span><span class="ranking-mvp-label">Élite Femenino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
+          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinadora</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
+            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Lucía Martín Fdez.</div><div class="racer-club">Gijón Patín Club</div></td><td>Gijón PC</td><td><span class="pts">420</span></td><td><span class="delta up">↑ 3</span></td></tr>
+            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Ana Romero Vega</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">405</span></td><td><span class="delta same">—</span></td></tr>
+            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇨🇴 Valentina Ríos C.</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">388</span></td><td><span class="delta up">↑ 2</span></td></tr>
+            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Sara Gómez Fdez.</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">372</span></td><td><span class="delta down">↓ 1</span></td></tr>
+            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Marta Iglesias P.</div><div class="racer-club">Euskadi Patín</div></td><td>Euskadi P.</td><td><span class="pts">358</span></td><td><span class="delta up">↑ 1</span></td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+      <div class="ranking-cat-panel" id="cat-estrella">
+        <div class="ranking-gender-tabs">
+          <button class="ranking-gender-tab active" onclick="switchGender(this,'estrella-masc')">♂ Masculino</button>
+          <button class="ranking-gender-tab" onclick="switchGender(this,'estrella-fem')">♀ Femenino</button>
+        </div>
+        <div class="ranking-gender-panel active" id="estrella-masc">
+          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">⭐</span><span class="ranking-mvp-label" style="color:var(--blue)">Estrella Masculino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
+          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinador</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
+            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Roberto Cano</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">395</span></td><td><span class="delta up">↑ 2</span></td></tr>
+            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Marcos Fdez. Ríos</div><div class="racer-club">Club Astur Speed</div></td><td>Astur Speed</td><td><span class="pts">378</span></td><td><span class="delta up">↑ 1</span></td></tr>
+            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇪🇸 Iñigo Urrutia</div><div class="racer-club">Euskadi Patín</div></td><td>Euskadi P.</td><td><span class="pts">362</span></td><td><span class="delta same">—</span></td></tr>
+            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Carlos Blanco M.</div><div class="racer-club">Galicia Speed Club</div></td><td>Galicia SC</td><td><span class="pts">344</span></td><td><span class="delta down">↓ 2</span></td></tr>
+            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Pablo Cortés V.</div><div class="racer-club">Zaragoza Inline</div></td><td>Zgz Inline</td><td><span class="pts">331</span></td><td><span class="delta up">↑ 3</span></td></tr>
+          </tbody></table></div>
+        </div>
+        <div class="ranking-gender-panel" id="estrella-fem">
+          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">⭐</span><span class="ranking-mvp-label" style="color:var(--blue)">Estrella Femenino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
+          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinadora</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
+            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Noa Vidal Torres</div><div class="racer-club">Valencia Speed</div></td><td>Valencia S.</td><td><span class="pts">388</span></td><td><span class="delta up">↑ 4</span></td></tr>
+            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Carla Pons Serra</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">370</span></td><td><span class="delta same">—</span></td></tr>
+            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇪🇸 Alba Ruiz Mora</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">355</span></td><td><span class="delta up">↑ 1</span></td></tr>
+            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Irene Soto Leal</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">339</span></td><td><span class="delta down">↓ 1</span></td></tr>
+            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Claudia Méndez R.</div><div class="racer-club">Gijón Patín Club</div></td><td>Gijón PC</td><td><span class="pts">322</span></td><td><span class="delta up">↑ 2</span></td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+      <div class="ranking-cat-panel" id="cat-promesa">
+        <div class="ranking-gender-tabs">
+          <button class="ranking-gender-tab active" onclick="switchGender(this,'promesa-masc')">♂ Masculino</button>
+          <button class="ranking-gender-tab" onclick="switchGender(this,'promesa-fem')">♀ Femenino</button>
+        </div>
+        <div class="ranking-gender-panel active" id="promesa-masc">
+          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">🌱</span><span class="ranking-mvp-label" style="color:var(--green)">Promesa Masculino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
+          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinador</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
+            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Diego Lara Cruz</div><div class="racer-club">Gijón Patín Club</div></td><td>Gijón PC</td><td><span class="pts">310</span></td><td><span class="delta up">↑ 5</span></td></tr>
+            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Álex Prieto Paz</div><div class="racer-club">Astur Speed Club</div></td><td>Astur Speed</td><td><span class="pts">294</span></td><td><span class="delta up">↑ 2</span></td></tr>
+            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇪🇸 Iker Serrano G.</div><div class="racer-club">Euskadi Patín</div></td><td>Euskadi P.</td><td><span class="pts">281</span></td><td><span class="delta same">—</span></td></tr>
+            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Hugo Navarro F.</div><div class="racer-club">Valencia Speed</div></td><td>Valencia S.</td><td><span class="pts">265</span></td><td><span class="delta down">↓ 1</span></td></tr>
+            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Mateo Rivas Peña</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">251</span></td><td><span class="delta up">↑ 1</span></td></tr>
+          </tbody></table></div>
+        </div>
+        <div class="ranking-gender-panel" id="promesa-fem">
+          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">🌱</span><span class="ranking-mvp-label" style="color:var(--green)">Promesa Femenino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
+          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinadora</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
+            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Vera Molina Cano</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">305</span></td><td><span class="delta up">↑ 3</span></td></tr>
+            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Sofía Castro Reyes</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">289</span></td><td><span class="delta up">↑ 1</span></td></tr>
+            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇪🇸 Emma Fuentes Val</div><div class="racer-club">Gijón Patín Club</div></td><td>Gijón PC</td><td><span class="pts">274</span></td><td><span class="delta same">—</span></td></tr>
+            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Leire Aguirre O.</div><div class="racer-club">Euskadi Patín</div></td><td>Euskadi P.</td><td><span class="pts">258</span></td><td><span class="delta down">↓ 2</span></td></tr>
+            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Paula Herrero V.</div><div class="racer-club">Zaragoza Inline</div></td><td>Zgz Inline</td><td><span class="pts">243</span></td><td><span class="delta up">↑ 2</span></td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTREVISTAS -->
+  <div id="entrevistas">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Entre<em>vistas</em></h2>
+        <a class="see-all" href="#">Ver todas →</a>
+      </div>
+      <div class="entrevistas-grid reveal" id="entrevistas-grid"></div>
+    </div>
+  </div>
+
+  <!-- TÉCNICA -->
+  <div class="tecnica-section">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Zona <em>Técnica</em></h2>
+        <a class="see-all" href="#">Ver más →</a>
+      </div>
+      <div class="tecnica-grid reveal">
+        <div class="tecnica-featured">
+          <svg class="tecnica-icon" viewBox="0 0 80 80" fill="none"><ellipse cx="40" cy="40" rx="32" ry="16" stroke="#F5A623" stroke-width="2"/><circle cx="40" cy="40" r="8" fill="#F5A623" opacity="0.3"/><line x1="8" y1="40" x2="72" y2="40" stroke="#F5A623" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/></svg>
+          <div class="news-category cat-tecnica">Técnica Destacada</div>
+          <h3 class="news-title" style="font-size:26px;margin-bottom:.75rem;">Biomecánica del viraje en pista corta: análisis 3D del gesto técnico</h3>
+          <p class="news-excerpt">Analizamos frame a frame la técnica de los mejores patinadores del mundo en el viraje de pista corta. Ángulos, fuerzas y claves para mejorar tu rendimiento.</p>
+          <div class="news-meta"><span>1 Abr 2026</span><span style="color:var(--muted)">12 min lectura</span></div>
+          <div style="margin-top:1.25rem;display:flex;gap:10px;">
+            <a class="btn-primary" href="#" style="font-size:12px;padding:9px 18px;">Leer análisis →</a>
+            <a class="btn-ghost" href="#" style="font-size:12px;padding:8px 16px">Ver vídeo</a>
+          </div>
+        </div>
+        <div class="tecnica-list">
+          <div class="tecnica-item"><div class="tecnica-num">01</div><div class="tecnica-item-content"><div class="news-category" style="margin-bottom:4px">Virajes</div><h3 class="news-title">Técnica de sobrecruce en curva: ejercicios progresivos</h3><div class="news-meta" style="margin-top:4px"><span>28 Mar 2026</span></div></div></div>
+          <div class="tecnica-item"><div class="tecnica-num">02</div><div class="tecnica-item-content"><div class="news-category cat-entrevista" style="margin-bottom:4px">Entrenamiento</div><h3 class="news-title">Periodización en patinaje de pista: la guía definitiva para 2026</h3><div class="news-meta" style="margin-top:4px"><span>25 Mar 2026</span></div></div></div>
+          <div class="tecnica-item"><div class="tecnica-num">03</div><div class="tecnica-item-content"><div class="news-category" style="margin-bottom:4px">Equipación</div><h3 class="news-title">Configuración de ruedas según superficie: duro vs blando</h3><div class="news-meta" style="margin-top:4px"><span>22 Mar 2026</span></div></div></div>
+          <div class="tecnica-item"><div class="tecnica-num">04</div><div class="tecnica-item-content"><div class="news-category cat-tecnica" style="margin-bottom:4px">Nutrición</div><h3 class="news-title">Alimentación en día de competición: lo que hacen los élite</h3><div class="news-meta" style="margin-top:4px"><span>19 Mar 2026</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVISTA (CON 7 PORTADAS) -->
+  <div class="revista-section" id="revista">
+    <div class="revista-inner">
+      <!-- Número actual destacado -->
+      <div class="revista-top">
+        <div class="revista-cover-placeholder" id="revista-main-cover" onclick="openRevista(7)">
+          <div class="revista-cover-logo">ROLLER<br>ZONE</div>
+          <svg style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:55px;opacity:.25;z-index:1;" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="24" ry="12" stroke="#F5A623" stroke-width="1.5" fill="none"/><circle cx="30" cy="30" r="6" fill="#F5A623" opacity="0.5"/></svg>
+          <div class="revista-cover-issue">Nº 7 · 2026</div>
+        </div>
+        <div class="revista-text">
+          <div class="revista-kicker">Revista RollerZone · Número 7</div>
+          <div class="revista-title">La Nueva Generación<br>del Patinaje Español</div>
+          <p class="revista-desc">Entrevistas exclusivas, técnica avanzada, análisis tácticos y los mejores reportajes fotográficos de la temporada 2026.</p>
+          <div class="revista-highlights">
+            <span class="revista-hl">Chevi Guzmán en exclusiva</span>
+            <span class="revista-hl">Biomecánica del viraje</span>
+            <span class="revista-hl">Copa Europa Inzell</span>
+            <span class="revista-hl">Top 10 patines 2026</span>
+          </div>
+          <div class="revista-btns">
+            <div class="revista-price"><sup>Solo</sup>6€</div>
+            <a class="btn-primary" href="#">Comprar Ahora →</a>
+            <a class="btn-ghost" href="#">Ver contenidos</a>
+          </div>
+        </div>
+      </div>
+      <!-- Grid de 7 números -->
+      <div class="revista-numeros-title">Todos los <em>Números</em></div>
+      <div class="revista-numeros-grid" id="revista-numeros-grid"></div>
+    </div>
+  </div>
+
+  <!-- PATROCINADORES -->
+  <section class="sponsors-section" id="patrocinadores">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">PATRO<em>CINADORES</em></h2>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">Confían en nosotros</span>
+      </div>
+      <div class="sponsors-grid reveal" id="sponsors-grid"></div>
+    </div>
+  </section>
+
+  <!-- COLABORADORES -->
+  <section class="colaboradores-section" id="colaboradores">
+    <div class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Nuestros <em>Colaboradores</em></h2>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);">El equipo detrás de la revista</span>
+      </div>
+      <div class="colaboradores-grid reveal" id="colaboradores-grid"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-bar">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <div class="newsletter-title">📬 Mantente al día con RollerZone</div>
+        <div class="newsletter-sub">Resultados, noticias y técnica en tu correo. Sin spam, solo patinaje.</div>
+      </div>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" placeholder="tu@correo.com" id="nlEmail">
+        <button class="newsletter-btn" onclick="subscribeNewsletter()">Suscribirse</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">RollerZone</div>
+    <div class="footer-tagline">El medio del patinaje de velocidad en España</div>
+    <div class="footer-socials">
+      <a class="social-btn" href="#" aria-label="Instagram">IG</a>
+      <a class="social-btn" href="#" aria-label="YouTube">YT</a>
+      <a class="social-btn" href="#" aria-label="Twitter/X">X</a>
+      <a class="social-btn" href="#" aria-label="TikTok">TK</a>
+    </div>
+    <div class="footer-links">
+      <a href="#" onclick="goHome()">Inicio</a>
+      <a href="#noticias" onclick="goHome()">Noticias</a>
+      <a href="#ranking" onclick="goHome()">Ranking</a>
+      <a href="#entrevistas" onclick="goHome()">Entrevistas</a>
+      <a href="#eventos" onclick="goHome()">Eventos</a>
+      <a href="#revista" onclick="goHome()">Revista</a>
+      <a href="#patrocinadores" onclick="goHome()">Patrocinadores</a>
+      <a href="#colaboradores" onclick="goHome()">Colaboradores</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="footer-copy">© 2026 RollerZone · @rollerzone_spain · Todos los derechos reservados</div>
+  </footer>
+
+</div><!-- /page-home -->
+
+
+<!-- ================================================================
+     PÁGINA INDIVIDUAL — NOTICIA
+     ================================================================ -->
+<div id="page-noticia" style="display:none;">
+  <div class="breadcrumb">
+    <a onclick="goHome()">RollerZone</a>
+    <span class="breadcrumb-sep">›</span>
+    <a onclick="goHome(); setTimeout(()=>document.getElementById('noticias').scrollIntoView({behavior:'smooth'}),100)">Noticias</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="noticia-breadcrumb-title">Artículo</span>
+  </div>
+  <div class="page-noticia-hero" id="noticia-hero-section">
+    <div class="page-noticia-hero-bg" id="noticia-hero-bg"></div>
+    <img class="page-noticia-hero-img" id="noticia-hero-img" src="" alt="" style="display:none">
+    <div class="page-noticia-hero-content">
+      <button class="page-noticia-back" onclick="goHome(); setTimeout(()=>document.getElementById('noticias').scrollIntoView({behavior:'smooth'}),80)">Volver a Noticias</button>
+      <div class="page-noticia-category" id="noticia-page-cat"></div>
+      <h1 class="page-noticia-title" id="noticia-page-title"></h1>
+      <div class="page-noticia-meta" id="noticia-page-meta"></div>
+    </div>
+  </div>
+  <div class="page-noticia-body">
+    <article class="page-noticia-article">
+      <p class="page-noticia-lead" id="noticia-page-lead"></p>
+      <div class="page-noticia-text" id="noticia-page-body"></div>
+      <div class="page-noticia-tags" id="noticia-page-tags"></div>
+    </article>
+    <aside class="page-noticia-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">Otras Noticias</div>
+        <div id="noticia-sidebar-list"></div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-title">Próximos Eventos</div>
+        <div id="noticia-sidebar-eventos"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ================================================================
+     PÁGINA INDIVIDUAL — EVENTO
+     ================================================================ -->
+<div id="page-evento" style="display:none;">
+  <div class="breadcrumb">
+    <a onclick="goHome()">RollerZone</a>
+    <span class="breadcrumb-sep">›</span>
+    <a onclick="goHome(); setTimeout(()=>document.getElementById('eventos').scrollIntoView({behavior:'smooth'}),100)">Eventos</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="evento-breadcrumb-title">Evento</span>
+  </div>
+  <div class="page-evento-hero">
+    <div class="page-evento-hero-bg"></div>
+    <div class="page-evento-hero-pattern"></div>
+    <img class="page-evento-hero-img" id="evento-hero-img" src="" alt="" style="display:none">
+    <div class="page-evento-date-big" id="evento-hero-date-big"></div>
+    <div class="page-evento-hero-content">
+      <button class="page-noticia-back" onclick="goHome(); setTimeout(()=>document.getElementById('eventos').scrollIntoView({behavior:'smooth'}),80)">Volver a Eventos</button>
+      <div id="evento-page-badge" class="evento-badge" style="margin-bottom:.75rem;display:inline-block;"></div>
+      <h1 class="page-noticia-title" id="evento-page-title"></h1>
+      <div class="page-noticia-meta" id="evento-page-meta" style="margin-top:.75rem;"></div>
+    </div>
+  </div>
+  <div class="page-evento-body">
+    <div>
+      <div class="evento-detail-card" id="evento-desc-card">
+        <div class="evento-detail-header"><div class="evento-detail-title">Sobre el Evento</div></div>
+        <div class="evento-detail-body">
+          <div class="evento-desc-text" id="evento-page-desc"></div>
+        </div>
+      </div>
+      <div class="evento-detail-card">
+        <div class="evento-detail-header"><div class="evento-detail-title">Información General</div></div>
+        <div class="evento-detail-body" id="evento-info-rows"></div>
+      </div>
+      <div style="margin-top:2rem;">
+        <div class="page-section-label">Más Eventos</div>
+        <div class="eventos-relacionados-grid" id="eventos-relacionados"></div>
+      </div>
+    </div>
+    <div>
+      <div style="margin-bottom:1.25rem;">
+        <div id="evento-cartel-wrap"></div>
+      </div>
+      <button class="btn-inscripcion" onclick="alert('Inscripción disponible próximamente')">
+        Inscribirse al Evento →
+      </button>
+      <div class="sidebar-card">
+        <div class="sidebar-title">Últimas Noticias</div>
+        <div id="evento-sidebar-news"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     PÁGINA INDIVIDUAL — ENTREVISTA
+     ================================================================ -->
+<div id="page-entrevista" style="display:none;">
+  <div class="breadcrumb">
+    <a onclick="goHome()">RollerZone</a>
+    <span class="breadcrumb-sep">›</span>
+    <a onclick="goHome(); setTimeout(()=>document.getElementById('entrevistas').scrollIntoView({behavior:'smooth'}),100)">Entrevistas</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="entrevista-breadcrumb-title">Entrevista</span>
+  </div>
+  <div class="page-entrevista-hero">
+    <div class="page-entrevista-hero-bg"></div>
+    <div class="page-entrevista-hero-pattern"></div>
+    <img class="page-entrevista-hero-img" id="entrevista-hero-img" src="" alt="" style="display:none">
+    <div class="page-entrevista-quote-bg">"</div>
+    <div class="page-entrevista-hero-content">
+      <button class="page-noticia-back" onclick="goHome(); setTimeout(()=>document.getElementById('entrevistas').scrollIntoView({behavior:'smooth'}),80)" style="color:var(--blue);">Volver a Entrevistas</button>
+      <div class="entrevista-persona-wrap">
+        <div class="entrevista-persona-avatar-lg" id="entrevista-page-avatar-lg"></div>
+        <div class="entrevista-persona-info">
+          <div class="news-category cat-entrevista" style="margin-bottom:.6rem;">Entrevista</div>
+          <div class="entrevista-persona-nombre" id="entrevista-page-nombre"></div>
+          <div class="entrevista-persona-rol" id="entrevista-page-rol"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-entrevista-body">
+    <article class="entrevista-article">
+      <p class="entrevista-lead-quote" id="entrevista-page-quote"></p>
+      <div class="entrevista-full-text" id="entrevista-page-body"></div>
+      <div class="page-noticia-tags" id="entrevista-page-tags" style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-solid);"></div>
+    </article>
+    <aside class="entrevista-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title" style="color:var(--blue);">Otras Entrevistas</div>
+        <div id="entrevista-sidebar-list"></div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-title">Próximos Eventos</div>
+        <div id="entrevista-sidebar-eventos"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ================================================================
+     PÁGINA INDIVIDUAL — PATROCINADOR
+     ================================================================ -->
+<div id="page-sponsor" style="display:none;">
+  <div class="breadcrumb">
+    <a onclick="goHome()">RollerZone</a>
+    <span class="breadcrumb-sep">›</span>
+    <a onclick="goHome(); setTimeout(()=>document.getElementById('patrocinadores').scrollIntoView({behavior:'smooth'}),100)">Patrocinadores</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="sponsor-breadcrumb-title">Patrocinador</span>
+  </div>
+  <div class="page-sponsor-hero">
+    <div class="page-sponsor-hero-bg"></div>
+    <div class="page-sponsor-hero-pattern"></div>
+    <img class="page-sponsor-hero-img" id="sponsor-hero-img" src="" alt="" style="display:none">
+    <div class="page-sponsor-hero-content">
+      <button class="page-noticia-back" onclick="goHome(); setTimeout(()=>document.getElementById('patrocinadores').scrollIntoView({behavior:'smooth'}),80)">Volver a Patrocinadores</button>
+      <div id="sponsor-page-logo-wrap" class="sponsor-hero-logo-wrap"></div>
+      <div id="sponsor-page-tier" class="sponsor-hero-tier-badge tier-gold"></div>
+      <div class="sponsor-hero-name" id="sponsor-page-name"></div>
+      <div class="sponsor-hero-tagline" id="sponsor-page-tagline"></div>
+    </div>
+  </div>
+  <div class="page-sponsor-body">
+    <div>
+      <div class="sponsor-detail-card">
+        <div class="sponsor-detail-header"><div class="sponsor-detail-title">Sobre la Empresa</div></div>
+        <div class="sponsor-detail-body">
+          <div class="sponsor-desc-text" id="sponsor-page-desc"></div>
+        </div>
+      </div>
+      <div class="sponsor-detail-card">
+        <div class="sponsor-detail-header"><div class="sponsor-detail-title">Información</div></div>
+        <div class="sponsor-detail-body" id="sponsor-info-rows"></div>
+      </div>
+      <div style="margin-top:2rem;">
+        <div class="page-section-label">Otros Patrocinadores</div>
+        <div class="otros-sponsors-grid" id="otros-sponsors-grid"></div>
+      </div>
+    </div>
+    <div>
+      <button class="btn-sponsor-web" id="sponsor-web-btn" onclick="alert('Próximamente')">
+        Visitar Web Oficial →
+      </button>
+      <div class="sidebar-card">
+        <div class="sidebar-title">Últimas Noticias</div>
+        <div id="sponsor-sidebar-news"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕ CERRAR</div>
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <div id="lightbox-img"></div>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<!-- ================================================================
+     ADMIN
+     ================================================================ -->
+<div id="admin-overlay">
+  <div id="admin-login">
+    <div class="login-box">
+      <div class="login-logo">RollerZone</div>
+      <div class="login-sub">Panel de Administración</div>
+      <div class="login-field"><label>Usuario</label><input type="text" id="login-user" placeholder="admin" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      <div class="login-field"><label>Contraseña</label><input type="password" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      <div class="login-error" id="login-error">Usuario o contraseña incorrectos</div>
+      <button class="login-btn" onclick="doLogin()">Entrar al Panel →</button>
+      <div class="login-hint">Demo: usuario <strong>admin</strong> / clave <strong>admin123</strong></div>
+      <div style="margin-top:1rem;text-align:center;"><button onclick="closeAdmin()" style="background:none;border:none;color:var(--muted);font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:underline;">← Volver al sitio</button></div>
+    </div>
+  </div>
+  <div id="admin-ui" class="hidden">
+    <div class="admin-sidebar">
+      <div class="admin-sidebar-logo">RZ Admin</div>
+      <nav class="admin-nav">
+        <div class="admin-nav-item active" onclick="showPanel('dashboard',this)"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1" opacity=".8"/><rect x="9" y="1" width="6" height="6" rx="1" opacity=".8"/><rect x="1" y="9" width="6" height="6" rx="1" opacity=".8"/><rect x="9" y="9" width="6" height="6" rx="1" opacity=".8"/></svg>Dashboard</div>
+        <div class="admin-nav-item" onclick="showPanel('noticias-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="2" rx="1"/><rect x="1" y="6" width="10" height="2" rx="1" opacity=".7"/><rect x="1" y="10" width="12" height="2" rx="1" opacity=".7"/><rect x="1" y="14" width="7" height="2" rx="1" opacity=".5"/></svg>Noticias</div>
+        <div class="admin-nav-item" onclick="showPanel('eventos-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="3" width="14" height="12" rx="1.5" opacity=".7"/><rect x="4" y="1" width="2" height="4" rx="1"/><rect x="10" y="1" width="2" height="4" rx="1"/><rect x="1" y="7" width="14" height="1" opacity=".5"/></svg>Eventos</div>
+        <div class="admin-nav-item" onclick="showPanel('entrevistas-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="5" r="3" opacity=".8"/><path d="M2 14c0-3 2.7-5 6-5s6 2 6 5" opacity=".7"/></svg>Entrevistas</div>
+        <div class="admin-nav-item" onclick="showPanel('sponsors-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z" opacity=".8"/></svg>Patrocinadores</div>
+        <div class="admin-nav-item" onclick="showPanel('colaboradores-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><circle cx="5" cy="5" r="2.5" opacity=".8"/><circle cx="11" cy="5" r="2.5" opacity=".8"/><path d="M1 13c0-2.2 1.8-4 4-4s4 1.8 4 4" opacity=".7"/><path d="M9 13c0-2.2 1.8-4 4-4" opacity=".5"/></svg>Colaboradores</div>
+        <div class="admin-nav-item" onclick="showPanel('hero-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="3" width="14" height="9" rx="1.5" opacity=".7"/><rect x="1" y="13" width="14" height="1.5" rx=".75" opacity=".4"/></svg>Hero / Portada</div>
+        <div class="admin-nav-item" onclick="showPanel('ticker-panel',this)"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M1 8h14M5 5l-4 3 4 3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Ticker</div>
+      </nav>
+      <div class="admin-sidebar-footer"><button class="admin-close-btn" onclick="closeAdmin()">← Volver al sitio</button></div>
+    </div>
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <span class="admin-topbar-title" id="admin-topbar-title">Dashboard</span>
+        <span class="admin-topbar-badge">✓ Sesión activa</span>
+      </div>
+      <div class="admin-content">
+        <!-- DASHBOARD -->
+        <div class="admin-panel active" id="panel-dashboard">
+          <div class="admin-stats-row">
+            <div class="admin-stat-card"><div class="admin-stat-num" id="dash-noticias">5</div><div class="admin-stat-label">Noticias</div></div>
+            <div class="admin-stat-card"><div class="admin-stat-num" id="dash-eventos">3</div><div class="admin-stat-label">Eventos</div></div>
+            <div class="admin-stat-card"><div class="admin-stat-num" id="dash-entrevistas">3</div><div class="admin-stat-label">Entrevistas</div></div>
+            <div class="admin-stat-card"><div class="admin-stat-num" id="dash-colaboradores">4</div><div class="admin-stat-label">Colaboradores</div></div>
+          </div>
+          <div class="admin-widgets-row">
+            <div class="admin-widget">
+              <div class="admin-widget-title">Actividad Reciente</div>
+              <div class="recent-item"><div class="recent-dot dot-gold"></div><div class="recent-text">Noticia destacada actualizada</div><div class="recent-time">Hace 5m</div></div>
+              <div class="recent-item"><div class="recent-dot dot-blue"></div><div class="recent-text">Nuevo evento añadido</div><div class="recent-time">Hace 1h</div></div>
+              <div class="recent-item"><div class="recent-dot dot-green"></div><div class="recent-text">Entrevista publicada</div><div class="recent-time">Hoy 09:14</div></div>
+              <div class="recent-item"><div class="recent-dot dot-purple"></div><div class="recent-text">Colaborador añadido</div><div class="recent-time">Ayer</div></div>
+            </div>
+            <div class="admin-widget">
+              <div class="admin-widget-title">Acceso Rápido</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.25rem;">
+                <button class="btn-add" style="justify-content:center;width:100%;" onclick="showPanel('noticias-panel',null);openModalNoticia()">+ Noticia</button>
+                <button class="btn-add" style="justify-content:center;width:100%;background:rgba(74,158,255,.1);color:var(--blue);border-color:rgba(74,158,255,.3);" onclick="showPanel('eventos-panel',null);openModalEvento()">+ Evento</button>
+                <button class="btn-add" style="justify-content:center;width:100%;background:rgba(61,214,140,.1);color:var(--green);border-color:rgba(61,214,140,.3);" onclick="showPanel('entrevistas-panel',null);openModalEntrevista()">+ Entrevista</button>
+                <button class="btn-add" style="justify-content:center;width:100%;background:rgba(167,139,250,.1);color:var(--purple);border-color:rgba(167,139,250,.3);" onclick="showPanel('colaboradores-panel',null);openModalColaborador()">+ Colaborador</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- NOTICIAS -->
+        <div class="admin-panel" id="panel-noticias-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Gestión de Noticias</div>
+            <button class="btn-add" onclick="openModalNoticia()">+ Nueva Noticia</button>
+          </div>
+          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Img</th><th>Título</th><th>Categoría</th><th>Fecha</th><th>Destacada</th><th>Acciones</th></tr></thead><tbody id="admin-noticias-tbody"></tbody></table></div>
+        </div>
+        <!-- EVENTOS -->
+        <div class="admin-panel" id="panel-eventos-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Gestión de Eventos</div>
+            <button class="btn-add" onclick="openModalEvento()">+ Nuevo Evento</button>
+          </div>
+          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Cartel</th><th>Nombre</th><th>Fecha</th><th>Lugar</th><th>Tipo</th><th>Acciones</th></tr></thead><tbody id="admin-eventos-tbody"></tbody></table></div>
+        </div>
+        <!-- ENTREVISTAS -->
+        <div class="admin-panel" id="panel-entrevistas-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Gestión de Entrevistas</div>
+            <button class="btn-add" onclick="openModalEntrevista()">+ Nueva Entrevista</button>
+          </div>
+          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Foto</th><th>Nombre</th><th>Rol</th><th>Extracto</th><th>Acciones</th></tr></thead><tbody id="admin-entrevistas-tbody"></tbody></table></div>
+        </div>
+        <!-- PATROCINADORES -->
+        <div class="admin-panel" id="panel-sponsors-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Gestión de Patrocinadores</div>
+            <button class="btn-add" onclick="openModalSponsor()">+ Nuevo Patrocinador</button>
+          </div>
+          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Logo</th><th>Nombre</th><th>Nivel</th><th>Descripción</th><th>Acciones</th></tr></thead><tbody id="admin-sponsors-tbody"></tbody></table></div>
+        </div>
+        <!-- COLABORADORES -->
+        <div class="admin-panel" id="panel-colaboradores-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Gestión de Colaboradores</div>
+            <button class="btn-add" onclick="openModalColaborador()">+ Nuevo Colaborador</button>
+          </div>
+          <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Foto</th><th>Nombre</th><th>Rol</th><th>Desde</th><th>Acciones</th></tr></thead><tbody id="admin-colaboradores-tbody"></tbody></table></div>
+        </div>
+        <!-- HERO PANEL -->
+        <div class="admin-panel" id="panel-hero-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Configuración del Hero</div>
+            <button class="btn-add" onclick="saveHero()">✓ Guardar Hero</button>
+          </div>
+          <div style="background:var(--admin-card);border:1px solid var(--admin-border);padding:1.5rem;">
+            <div class="form-group"><label class="form-label">Etiqueta (tag)</label><input class="form-input" id="hero-tag-input" placeholder="En Vivo · Abril 2026"></div>
+            <div class="form-group"><label class="form-label">Título</label><input class="form-input" id="hero-title-input" placeholder="Lagos 2026 &lt;em&gt;Arde&lt;/em&gt;"></div>
+            <div class="form-group"><label class="form-label">Subtítulo / Meta</label><input class="form-input" id="hero-meta-input" placeholder="Por Redacción RollerZone · 3 Abr 2026"></div>
+            <div class="form-group"><label class="form-label">Extracto</label><textarea class="form-textarea" id="hero-excerpt-input" placeholder="Descripción del artículo destacado..."></textarea></div>
+          </div>
+        </div>
+        <!-- TICKER PANEL -->
+        <div class="admin-panel" id="panel-ticker-panel">
+          <div class="admin-table-header">
+            <div class="admin-table-title">Gestión del Ticker</div>
+            <button class="btn-add" onclick="addTickerItem()">+ Añadir</button>
+          </div>
+          <div style="background:var(--admin-card);border:1px solid var(--admin-border);padding:1rem;" id="ticker-items-list"></div>
+          <div style="margin-top:1rem;display:flex;gap:.5rem;">
+            <input class="form-input" id="ticker-new-input" placeholder="Nueva noticia para el ticker..." style="flex:1;">
+            <button class="btn-save" onclick="addTickerItem()">Añadir</button>
+          </div>
+          <div style="margin-top:1rem;"><button class="btn-add" onclick="saveTickerItems()">✓ Guardar y Actualizar Ticker</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODALES -->
+<div class="admin-modal-backdrop" id="modal-noticia">
+  <div class="admin-modal" onclick="event.stopPropagation()">
+    <div class="modal-header"><span class="modal-title" id="modal-noticia-title">Nueva Noticia</span><button class="modal-close" onclick="closeModal('modal-noticia')">✕</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="noticia-id">
+      <div class="form-group"><label class="form-label">Título</label><input class="form-input" id="noticia-titulo" placeholder="Título de la noticia"></div>
+      <div class="form-row">
+        <div><label class="form-label">Categoría</label>
+          <select class="form-select" id="noticia-cat">
+            <option>Reportaje</option><option>Resultados</option><option>Selección</option><option>Técnica</option><option>Equipación</option><option>Liga Nacional</option><option>Entrevista</option>
+          </select>
+        </div>
+        <div><label class="form-label">Fecha</label><input class="form-input" type="date" id="noticia-fecha"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Extracto</label><textarea class="form-textarea" id="noticia-excerpt" placeholder="Breve resumen..."></textarea></div>
+      <div class="form-group"><label class="form-label">Contenido completo</label><textarea class="form-textarea" id="noticia-contenido" placeholder="Escribe aquí el artículo completo. Usa ### para subtítulos y > para citas..." style="min-height:140px;"></textarea></div>
+      <div class="form-group"><label class="form-label">Tiempo de lectura</label><input class="form-input" id="noticia-tiempo" placeholder="5 min"></div>
+      <div class="form-group"><label class="form-label">Imagen (URL)</label><input class="form-input" id="noticia-img-url" placeholder="https://..."></div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-top:.5rem;">
+        <input type="checkbox" id="noticia-featured" style="accent-color:var(--gold);width:16px;height:16px;">
+        <label for="noticia-featured" class="form-label" style="margin:0;cursor:pointer;">Marcar como noticia destacada (hero del grid)</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('modal-noticia')">Cancelar</button>
+      <button class="btn-save" onclick="saveNoticia()">Guardar Noticia</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-modal-backdrop" id="modal-evento">
+  <div class="admin-modal" onclick="event.stopPropagation()">
+    <div class="modal-header"><span class="modal-title" id="modal-evento-title">Nuevo Evento</span><button class="modal-close" onclick="closeModal('modal-evento')">✕</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="evento-id">
+      <div class="form-group"><label class="form-label">Nombre del Evento</label><input class="form-input" id="evento-nombre" placeholder="Nombre del campeonato"></div>
+      <div class="form-row">
+        <div><label class="form-label">Fecha</label><input class="form-input" type="date" id="evento-fecha"></div>
+        <div><label class="form-label">Tipo</label><select class="form-select" id="evento-tipo"><option>Nacional</option><option>Internacional</option><option>Copa</option></select></div>
+      </div>
+      <div class="form-group"><label class="form-label">Lugar / Pabellón</label><input class="form-input" id="evento-lugar" placeholder="Ciudad, Pabellón"></div>
+      <div class="form-group"><label class="form-label">Inscritos / Info</label><input class="form-input" id="evento-inscritos" placeholder="142 inscritos · Inscripción abierta"></div>
+      <div class="form-group"><label class="form-label">Descripción del evento</label><textarea class="form-textarea" id="evento-descripcion" placeholder="Descripción completa del evento..." style="min-height:100px;"></textarea></div>
+      <div class="form-group"><label class="form-label">Imagen cartel (URL)</label><input class="form-input" id="evento-img-url" placeholder="https://..."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('modal-evento')">Cancelar</button>
+      <button class="btn-save" onclick="saveEvento()">Guardar Evento</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-modal-backdrop" id="modal-entrevista">
+  <div class="admin-modal" onclick="event.stopPropagation()">
+    <div class="modal-header"><span class="modal-title" id="modal-entrevista-title">Nueva Entrevista</span><button class="modal-close" onclick="closeModal('modal-entrevista')">✕</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="entrevista-id">
+      <div class="form-row">
+        <div><label class="form-label">Nombre</label><input class="form-input" id="entrevista-nombre" placeholder="Nombre del entrevistado"></div>
+        <div><label class="form-label">Rol / Cargo</label><input class="form-input" id="entrevista-rol" placeholder="Patinador élite, entrenador..."></div>
+      </div>
+      <div class="form-group"><label class="form-label">Cita / Extracto</label><textarea class="form-textarea" id="entrevista-quote" placeholder="Frase destacada..."></textarea></div>
+      <div class="form-group"><label class="form-label">Contenido completo (P: pregunta / R: respuesta por líneas)</label><textarea class="form-textarea" id="entrevista-contenido" placeholder="P: ¿Cuál es tu mayor logro?&#10;R: Sin duda el oro en el campeonato..." style="min-height:120px;"></textarea></div>
+      <div class="form-group"><label class="form-label">Tags (separados por coma)</label><input class="form-input" id="entrevista-tags" placeholder="Técnica, Motivación, Élite"></div>
+      <div class="form-group"><label class="form-label">Foto (URL)</label><input class="form-input" id="entrevista-img-url" placeholder="https://..."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('modal-entrevista')">Cancelar</button>
+      <button class="btn-save" onclick="saveEntrevista()">Guardar Entrevista</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PATROCINADOR -->
+<div class="admin-modal-backdrop" id="modal-sponsor">
+  <div class="admin-modal" onclick="event.stopPropagation()">
+    <div class="modal-header"><span class="modal-title" id="modal-sponsor-title">Nuevo Patrocinador</span><button class="modal-close" onclick="closeModal('modal-sponsor')">✕</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="sponsor-id">
+      <div class="form-row">
+        <div><label class="form-label">Nombre</label><input class="form-input" id="sponsor-nombre" placeholder="Nombre de la empresa"></div>
+        <div><label class="form-label">Nivel</label><select class="form-select" id="sponsor-tier"><option>Oro</option><option>Plata</option><option>Bronce</option></select></div>
+      </div>
+      <div class="form-group"><label class="form-label">Tagline / Descripción corta</label><input class="form-input" id="sponsor-tagline" placeholder="Fabricante oficial de material de competición"></div>
+      <div class="form-group"><label class="form-label">Descripción completa</label><textarea class="form-textarea" id="sponsor-desc" placeholder="Descripción detallada de la empresa y su vinculación con RollerZone..."></textarea></div>
+      <div class="form-group"><label class="form-label">Web</label><input class="form-input" id="sponsor-web" placeholder="https://www.empresa.com"></div>
+      <div class="form-group"><label class="form-label">Sector / Área</label><input class="form-input" id="sponsor-sector" placeholder="Material deportivo, Tecnología, etc."></div>
+      <div class="form-group"><label class="form-label">Logo (URL)</label><input class="form-input" id="sponsor-img-url" placeholder="https://..."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('modal-sponsor')">Cancelar</button>
+      <button class="btn-save" onclick="saveSponsor()">Guardar Patrocinador</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL COLABORADOR -->
+<div class="admin-modal-backdrop" id="modal-colaborador">
+  <div class="admin-modal" onclick="event.stopPropagation()">
+    <div class="modal-header"><span class="modal-title" id="modal-colaborador-title">Nuevo Colaborador</span><button class="modal-close" onclick="closeModal('modal-colaborador')">✕</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="colaborador-id">
+      <div class="form-row">
+        <div><label class="form-label">Nombre</label><input class="form-input" id="colaborador-nombre" placeholder="Nombre completo"></div>
+        <div><label class="form-label">Rol / Especialidad</label><input class="form-input" id="colaborador-rol" placeholder="Fotógrafo, Redactor, Analista..."></div>
+      </div>
+      <div class="form-group"><label class="form-label">Biografía</label><textarea class="form-textarea" id="colaborador-bio" placeholder="Breve descripción del colaborador y su trabajo..."></textarea></div>
+      <div class="form-row">
+        <div><label class="form-label">Colabora desde</label><input class="form-input" id="colaborador-desde" placeholder="2024"></div>
+        <div><label class="form-label">Instagram / Twitter</label><input class="form-input" id="colaborador-social" placeholder="@usuario"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Foto (URL)</label><input class="form-input" id="colaborador-img-url" placeholder="https://..."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('modal-colaborador')">Cancelar</button>
+      <button class="btn-save" onclick="saveColaborador()">Guardar Colaborador</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-toast" id="admin-toast"></div>
+
+<!-- ================================================================
+     JAVASCRIPT
+     ================================================================ -->
+<script src="app.js"></script>
+</body>
+</html>

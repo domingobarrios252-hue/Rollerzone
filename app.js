@@ -1,37 +1,37 @@
 /* =================== DATA =================== */
 var DB = {
   noticias: [
-    {id:1,titulo:'Lagos 2026 arde en los 500m',cat:'Reportaje',fecha:'2026-04-03',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje con actuaciones que ya son historia.',tiempo:'8 min',img:'https://domingobarrios252-hu.github.io/rollerzone/images/jessi.jpg',contenido:'',featured:true},
-    {id:2,titulo:'Chevi Guzmán encabeza el ranking nacional tras la tercera jornada',cat:'Resultados',fecha:'2026-04-02',excerpt:'Actuación brillante del patinador asturiano que supera a sus rivales por un margen histórico.',tiempo:'4 min',img:'',contenido:'',featured:false},
-    {id:3,titulo:'España cierra la temporada europea con tres medallas en Bogotá',cat:'Selección',fecha:'2026-04-01',excerpt:'El equipo nacional demuestra su nivel en el Campeonato Internacional con un balance histórico.',tiempo:'6 min',img:'',contenido:'',featured:false},
-    {id:4,titulo:'Los secretos del viraje perfecto: análisis biomecánico del sprint',cat:'Técnica',fecha:'2026-03-31',excerpt:'El entrenador nacional Carlos Redondo explica cómo los patinadores élite optimizan la posición en curva.',tiempo:'5 min',img:'',contenido:'',featured:false},
-    {id:5,titulo:'Bont Vaypor S3: probamos el patín que está dominando la temporada 2026',cat:'Equipación',fecha:'2026-03-29',excerpt:'Análisis completo del modelo más vendido del año. Rigidez, peso, ajuste y rendimiento en pista real.',tiempo:'7 min',img:'',contenido:'',featured:false},
+    {id:1,titulo:'Lagos 2026 arde en los 500m',cat:'Reportaje',fecha:'2026-04-03',autor:'Redacción RollerZone',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje con actuaciones que ya son historia.',tiempo:'8 min',img:'https://domingobarrios252-hue.github.io/Rollerzone/images/jessi.jpg',contenido:'',featured:true},
+    {id:2,titulo:'Chevi Guzmán encabeza el ranking nacional tras la tercera jornada',cat:'Resultados',fecha:'2026-04-02',autor:'Redacción RollerZone',excerpt:'Actuación brillante del patinador asturiano que supera a sus rivales por un margen histórico.',tiempo:'4 min',img:'',contenido:'',featured:false},
+    {id:3,titulo:'España cierra la temporada europea con tres medallas en Bogotá',cat:'Selección',fecha:'2026-04-01',autor:'Redacción RollerZone',excerpt:'El equipo nacional demuestra su nivel en el Campeonato Internacional con un balance histórico.',tiempo:'6 min',img:'',contenido:'',featured:false},
+    {id:4,titulo:'Los secretos del viraje perfecto: análisis biomecánico del sprint',cat:'Técnica',fecha:'2026-03-31',autor:'Carlos Redondo',excerpt:'El entrenador nacional Carlos Redondo explica cómo los patinadores élite optimizan la posición en curva.',tiempo:'5 min',img:'',contenido:'',featured:false},
+    {id:5,titulo:'Bont Vaypor S3: probamos el patín que está dominando la temporada 2026',cat:'Equipación',fecha:'2026-03-29',autor:'Redacción RollerZone',excerpt:'Análisis completo del modelo más vendido del año. Rigidez, peso, ajuste y rendimiento en pista real.',tiempo:'7 min',img:'',contenido:'',featured:false},
   ],
   eventos: [
-    {id:1,nombre:'Open de Asturias 2026 - fase Regional ',fecha:'2026-04-11',tipo:'Autonomico',lugar:'Pabellón Moreda, Gijón',inscritos:'187 inscritos · Plazas libres',img:'',descripcion:'4º Jornada del Open de Asturias en el patinodromo de moreda de Gijon.'},
-    {id:2,nombre:'Copa de España Inline 2026',fecha:'2026-04-26',tipo:'Copa',lugar:'Velódromo Valencia',inscritos:'231 inscritos · Inscripción abierta',img:'',descripcion:'La Copa de España Inline es el evento más importante del calendario nacional de pista corta. Esta edición se celebra en el renovado Velódromo de Valencia, con pistas homologadas para récords nacionales.'},
-    {id:3,nombre:'Grand Prix Internacional Inzell',fecha:'2026-05-10',tipo:'Internacional',lugar:'Inzell Ice Speed Center, Alemania',inscritos:'Copa Europa ISU',img:'',descripcion:'El Grand Prix de Inzell es la cita más importante del calendario europeo. El legendario Ice Speed Center alberga esta prueba de Copa Europa ISU, donde la selección española competirá contra las mejores naciones del mundo.'},
-    {id:4,nombre:'Campeonato de España Pista Larga',fecha:'2026-05-24',tipo:'Nacional',lugar:'Palacio de los Deportes, Madrid',inscritos:'310 inscritos · Inscripción abierta',img:'',descripcion:'El Campeonato de España de Pista Larga es una de las competiciones más prestigiosas del calendario nacional, reuniendo a los mejores patinadores de todas las categorías.'},
-    {id:5,nombre:'Open Internacional Barcelona',fecha:'2026-06-07',tipo:'Internacional',lugar:'Velòdrom Lluís Puig, Barcelona',inscritos:'Inscripción abierta · Internacional',img:'',descripcion:'El Open Internacional de Barcelona reúne a patinadores de más de 20 países en una competición de alto nivel en las instalaciones olímpicas de la ciudad.'},
-    {id:6,nombre:'Trofeo Asturias Speed',fecha:'2026-06-21',tipo:'Nacional',lugar:'Pabellón Moreda, Gijón',inscritos:'Por confirmar',img:'',descripcion:'El tradicional Trofeo Asturias Speed regresa a Gijón con una edición especial que contará con la participación de campeones internacionales.'},
-    {id:7,nombre:'World Inline Cup Berlin',fecha:'2026-07-05',tipo:'Internacional',lugar:'Berlín, Alemania',inscritos:'Cita mundial UCI',img:'',descripcion:'La World Inline Cup de Berlín es uno de los eventos más importantes del calendario mundial de patinaje de velocidad, organizada bajo los auspicios de la UCI.'},
+    {id:1,nombre:'Open de Asturias 2026 - 4ª Fase Regional',fecha:'2026-04-11',tipo:'Autonomico',lugar:'Pabellón Moreda, Gijón',inscritos:'187 inscritos · Plazas libres',img:'https://domingobarrios252-hue.github.io/Rollerzone/images/open.jpg',descripcion:'4ª Jornada del Open de Asturias en el patinodromo de Moreda de Gijón.'},
+    {id:2,nombre:'Copa de España Inline 2026',fecha:'2026-04-26',tipo:'Copa',lugar:'Velódromo Valencia',inscritos:'231 inscritos · Inscripción abierta',img:'',descripcion:'La Copa de España Inline es el evento más importante del calendario nacional de pista corta.'},
+    {id:3,nombre:'Grand Prix Internacional Inzell',fecha:'2026-05-10',tipo:'Internacional',lugar:'Inzell Ice Speed Center, Alemania',inscritos:'Copa Europa ISU',img:'',descripcion:'El Grand Prix de Inzell es la cita más importante del calendario europeo.'},
+    {id:4,nombre:'Campeonato de España Pista Larga',fecha:'2026-05-24',tipo:'Nacional',lugar:'Palacio de los Deportes, Madrid',inscritos:'310 inscritos · Inscripción abierta',img:'',descripcion:'El Campeonato de España de Pista Larga es una de las competiciones más prestigiosas del calendario nacional.'},
+    {id:5,nombre:'Open Internacional Barcelona',fecha:'2026-06-07',tipo:'Internacional',lugar:'Velòdrom Lluís Puig, Barcelona',inscritos:'Inscripción abierta · Internacional',img:'',descripcion:'El Open Internacional de Barcelona reúne a patinadores de más de 20 países.'},
+    {id:6,nombre:'Trofeo Asturias Speed',fecha:'2026-06-21',tipo:'Nacional',lugar:'Pabellón Moreda, Gijón',inscritos:'Por confirmar',img:'',descripcion:'El tradicional Trofeo Asturias Speed regresa a Gijón con una edición especial.'},
+    {id:7,nombre:'World Inline Cup Berlin',fecha:'2026-07-05',tipo:'Internacional',lugar:'Berlín, Alemania',inscritos:'Cita mundial UCI',img:'',descripcion:'La World Inline Cup de Berlín es uno de los eventos más importantes del calendario mundial.'},
   ],
   entrevistas: [
-    {id:1,nombre:'Chevi Guzmán',rol:'Patinador élite — Gijón PC',quote:'El patinaje de velocidad te enseña que los límites solo existen si tú los pones. Cada día en pista es una oportunidad de romperlos.',tags:'Técnica,Motivación,Élite',img:'',contenido:'P: ¿Cuál es el secreto de tu éxito esta temporada?\nR: El trabajo diario. No hay atajos. Llevo doce años en la pista y cada día aprendo algo nuevo. La diferencia entre los mejores y el resto está en los detalles.\nP: ¿Cómo vives la presión de ser el número uno en el ranking?\nR: Con mucha responsabilidad. Pero también como un privilegio. Saber que otros te observan te obliga a dar lo mejor de ti en cada entrenamiento.\nP: ¿Qué objetivos tienes para el resto de la temporada?\nR: Quiero mantener el liderato y hacer un papel digno en el Grand Prix de Inzell. El objetivo es subir al podio.'},
-    {id:2,nombre:'Carlos Redondo',rol:'Seleccionador Nacional',quote:'La nueva generación tiene hambre de medallas. Hemos cambiado la metodología de entrenamiento y los resultados empiezan a llegar.',tags:'Selección,Entrenamiento,Táctica',img:'',contenido:'P: ¿Cómo ha evolucionado el patinaje español en los últimos años?\nR: De forma extraordinaria. Cuando empecé como seleccionador hace cuatro años, teníamos talento pero nos faltaba estructura. Ahora tenemos ambas cosas.\nP: ¿Cuál es la clave de la nueva metodología de entrenamiento?\nR: Trabajamos mucho la personalización. Cada patinador tiene un plan adaptado a sus características biomecánicas. Ya no entrenamos igual a todos.\nP: ¿Qué espera de la temporada internacional?\nR: Que España esté presente en todos los podios importantes. Tenemos patinadores para eso.'},
-    {id:3,nombre:'Lucía Martín',rol:'Patinadora élite — Gijón PC',quote:'Ser la número uno de España es un orgullo enorme, pero lo que más me motiva es saber que cada record que rompo abre el camino a las que vienen detrás.',tags:'Femenino,Records,Inspiración',img:'',contenido:'P: ¿Cómo empezaste en el patinaje de velocidad?\nR: Empecé a los cinco años. Mi madre me llevó a la pista y no salí más. Desde el primer día supe que era lo mío.\nP: Eres referente para las patinadas más jóvenes, ¿cómo llevas esa responsabilidad?\nR: Con mucho cariño. Me encanta cuando las pequeñas se me acercan después de las competiciones. Les digo siempre lo mismo: entrena con alegría y los resultados llegan.\nP: ¿Qué te queda por conseguir en tu carrera?\nR: Un podio en un campeonato del mundo. Ese es el sueño que me levanta cada mañana.'},
+    {id:1,nombre:'Chevi Guzmán',rol:'Patinador élite — Gijón PC',quote:'El patinaje de velocidad te enseña que los límites solo existen si tú los pones. Cada día en pista es una oportunidad de romperlos.',tags:'Técnica,Motivación,Élite',img:'',imagenes:[],contenido:'P: ¿Cuál es el secreto de tu éxito esta temporada?\nR: El trabajo diario. No hay atajos. Llevo doce años en la pista y cada día aprendo algo nuevo.\nP: ¿Cómo vives la presión de ser el número uno en el ranking?\nR: Con mucha responsabilidad. Pero también como un privilegio.\nP: ¿Qué objetivos tienes para el resto de la temporada?\nR: Quiero mantener el liderato y hacer un papel digno en el Grand Prix de Inzell.'},
+    {id:2,nombre:'Carlos Redondo',rol:'Seleccionador Nacional',quote:'La nueva generación tiene hambre de medallas. Hemos cambiado la metodología de entrenamiento y los resultados empiezan a llegar.',tags:'Selección,Entrenamiento,Táctica',img:'',imagenes:[],contenido:'P: ¿Cómo ha evolucionado el patinaje español en los últimos años?\nR: De forma extraordinaria. Cuando empecé como seleccionador hace cuatro años, teníamos talento pero nos faltaba estructura.\nP: ¿Cuál es la clave de la nueva metodología de entrenamiento?\nR: Trabajamos mucho la personalización.\nP: ¿Qué espera de la temporada internacional?\nR: Que España esté presente en todos los podios importantes.'},
+    {id:3,nombre:'Lucía Martín',rol:'Patinadora élite — Gijón PC',quote:'Ser la número uno de España es un orgullo enorme, pero lo que más me motiva es saber que cada record que rompo abre el camino a las que vienen detrás.',tags:'Femenino,Records,Inspiración',img:'',imagenes:[],contenido:'P: ¿Cómo empezaste en el patinaje de velocidad?\nR: Empecé a los cinco años. Mi madre me llevó a la pista y no salí más.\nP: Eres referente para las patinadas más jóvenes, ¿cómo llevas esa responsabilidad?\nR: Con mucho cariño. Me encanta cuando las pequeñas se me acercan después de las competiciones.\nP: ¿Qué te queda por conseguir en tu carrera?\nR: Un podio en un campeonato del mundo.'},
   ],
   sponsors: [
-    {id:1,nombre:'IRIER',tier:'Oro',tagline:'Fabricante oficial del uniforme de la seleccion española de patinaje',desc:'IRIES es ademas el patrocinador principal de RollerZone y apoya el desarrollo de la revista Rollerzone y el patinaje español.',web:'https://irier.es',sector:'Material deportivo',img:''},
-    {id:2,nombre:'Doop Inline',tier:'Oro',tagline:'Equipación técnica de alto rendimiento',desc:'Doop Inline es la marca de referencia en equipación técnica para patinaje de velocidad. Sus trajes de competición y accesorios son diseñados con tecnología de última generación para maximizar el rendimiento en pista.',web:'https://doopinline.com',sector:'Equipación deportiva',img:''},
-    {id:3,nombre:'Seba Skates',tier:'Plata',tagline:'Patines y accesorios para élite',desc:'Seba Skates ofrece una amplia gama de patines y accesorios diseñados para patinadores de todos los niveles, con especial foco en la competición de élite.',web:'https://sebaskates.com',sector:'Material deportivo',img:''},
-    {id:4,nombre:'SpeedZone Pro',tier:'Bronce',tagline:'Cronometraje y tecnología deportiva',desc:'SpeedZone Pro proporciona soluciones tecnológicas de cronometraje y análisis de rendimiento para competiciones de patinaje de velocidad.',web:'https://speedzonepro.com',sector:'Tecnología deportiva',img:''},
+    {id:1,nombre:'IRIER',tier:'Oro',tagline:'Fabricante oficial del uniforme de la selección española de patinaje',desc:'IRIER es además el patrocinador principal de RollerZone y apoya el desarrollo de la revista Rollerzone y el patinaje español.',web:'https://irier.es',social:'',sector:'Material deportivo',img:''},
+    {id:2,nombre:'Doop Inline',tier:'Oro',tagline:'Equipación técnica de alto rendimiento',desc:'Doop Inline es la marca de referencia en equipación técnica para patinaje de velocidad.',web:'https://doopinline.com',social:'',sector:'Equipación deportiva',img:''},
+    {id:3,nombre:'Seba Skates',tier:'Plata',tagline:'Patines y accesorios para élite',desc:'Seba Skates ofrece una amplia gama de patines y accesorios para competición de élite.',web:'https://sebaskates.com',social:'',sector:'Material deportivo',img:''},
+    {id:4,nombre:'SpeedZone Pro',tier:'Bronce',tagline:'Cronometraje y tecnología deportiva',desc:'SpeedZone Pro proporciona soluciones de cronometraje y análisis de rendimiento.',web:'https://speedzonepro.com',social:'',sector:'Tecnología deportiva',img:''},
   ],
   colaboradores: [
-    {id:1,nombre:'Marcos Vidal',rol:'Fotógrafo Deportivo',bio:'Fotógrafo especializado en deportes de deslizamiento con más de 10 años cubriendo competiciones internacionales. Sus imágenes han aparecido en las principales publicaciones deportivas europeas.',desde:'2023',social:'@marcosvidal_foto',img:''},
-    {id:2,nombre:'Ana Solís',rol:'Redactora Técnica',bio:'Expatinadora nacional reconvertida en periodista deportiva. Aporta a RollerZone su visión técnica desde dentro de la competición y su red de contactos en el mundo del patinaje.',desde:'2024',social:'@anasolis_speed',img:''},
-    {id:3,nombre:'Jorge Pérez',rol:'Analista de Datos',bio:'Ingeniero especialista en ciencias del deporte. Desarrolla los sistemas de estadística y análisis de rendimiento que sustentan el Ranking MVP RollerZone y los análisis técnicos de la revista.',desde:'2024',social:'@jorgeperez_data',img:''},
-    {id:4,nombre:'Elena Castro',rol:'Diseñadora Gráfica',bio:'Directora de arte responsable de la identidad visual de la revista RollerZone. Combina su pasión por el diseño editorial con el mundo del deporte de alta velocidad.',desde:'2023',social:'@ecastro_design',img:''},
+    {id:1,nombre:'Marcos Vidal',rol:'Fotógrafo Deportivo',bio:'Fotógrafo especializado en deportes de deslizamiento con más de 10 años cubriendo competiciones internacionales.',desde:'2023',social:'@marcosvidal_foto',img:''},
+    {id:2,nombre:'Ana Solís',rol:'Redactora Técnica',bio:'Expatinadora nacional reconvertida en periodista deportiva. Aporta a RollerZone su visión técnica desde dentro de la competición.',desde:'2024',social:'@anasolis_speed',img:''},
+    {id:3,nombre:'Jorge Pérez',rol:'Analista de Datos',bio:'Ingeniero especialista en ciencias del deporte. Desarrolla los sistemas de estadística y análisis de rendimiento.',desde:'2024',social:'@jorgeperez_data',img:''},
+    {id:4,nombre:'Elena Castro',rol:'Diseñadora Gráfica',bio:'Directora de arte responsable de la identidad visual de la revista RollerZone.',desde:'2023',social:'@ecastro_design',img:''},
   ],
   revista: [
     {num:1,titulo:'El Nacimiento de una Revista',subtitulo:'Gijón, cuna del patinaje',precio:'6€',img:''},
@@ -42,8 +42,9 @@ var DB = {
     {num:6,titulo:'Invierno de Campeones',subtitulo:'Especial pista cubierta',precio:'6€',img:''},
     {num:7,titulo:'La Nueva Generación',subtitulo:'Patinaje español 2026',precio:'6€',img:''},
   ],
-  hero:{tag:'En Vivo · Abril 2026',titulo:'LAGOS 2026 <em>ARDE</em> EN LOS 500M',meta:'Speed Track European Series · <span>Portugal</span>',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje.',img:'https://domingobarrios252-hue.github.io/rollerzone/images/hero.jpg',num:'01'},
+  hero:{tag:'En Vivo · Abril 2026',titulo:'LAGOS 2026 <em>ARDE</em> EN LOS 500M',meta:'Speed Track European Series · <span>Portugal</span>',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje.',img:'https://domingobarrios252-hue.github.io/Rollerzone/images/jessi.jpg',num:'01'},
   ticker:['Chevi Guzmán bate el récord de pista en 500m','Liga Nacional 3ª División · Jornada 4 en curso','Open Madrid 2026 · Inscripciones abiertas','Daniel Milagros convocado con la selección española','Adrián Alonso · Nuevo patrocinador con Bont Skates','Campeonato Internacional Bogotá · Resultados disponibles','Livio Wenger debuta en la Liga Nacional 2026'],
+  whatsapp:'34600000000',
   nextId:20,
   eventosExpanded:false
 };
@@ -54,7 +55,7 @@ function monthStr(d){ if(!d) return ''; var p=d.split('-'); return ['ENE','FEB',
 function dayStr(d){ if(!d) return ''; return d.split('-')[2]||''; }
 function fmtDateES(d){ if(!d) return ''; var p=d.split('-'); return p[2]+' '+['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'][parseInt(p[1])-1]+' '+p[0]; }
 function catClass(c){ return {'Selección':'cat-seleccion','Técnica':'cat-tecnica','Entrevista':'cat-entrevista'}[c]||''; }
-function tipoClass(t){ return {'Nacional':'badge-nacional','Internacional':'badge-internacional','Copa':'badge-copa'}[t]||'badge-nacional'; }
+function tipoClass(t){ return {'Nacional':'badge-nacional','Internacional':'badge-internacional','Copa':'badge-copa','Autonomico':'badge-autonomico'}[t]||'badge-nacional'; }
 function tblBadgeClass(c){ return {'Reportaje':'reportaje','Selección':'seleccion','Técnica':'tecnica','Entrevista':'entrevista','Nacional':'nacional','Internacional':'internacional','Copa':'copa'}[c]||'reportaje'; }
 function tierClass(t){ return {'Oro':'tier-gold','Plata':'tier-silver','Bronce':'tier-bronze'}[t]||'tier-gold'; }
 function tierEmoji(t){ return {'Oro':'★','Plata':'✦','Bronce':'◆'}[t]||'★'; }
@@ -67,7 +68,7 @@ function showToast(msg,err){
 }
 
 /* =================== SPA ROUTER =================== */
-var allPages = ['page-home','page-noticia','page-evento','page-entrevista','page-sponsor'];
+var allPages = ['page-home','page-noticia','page-evento','page-entrevista'];
 function showPage(pageId){
   allPages.forEach(function(p){ document.getElementById(p).style.display='none'; });
   document.getElementById(pageId).style.display='block';
@@ -93,10 +94,11 @@ function openNoticia(id){
   document.getElementById('noticia-page-cat').className = 'page-noticia-category ' + catClass(n.cat);
   document.getElementById('noticia-page-cat').textContent = n.cat;
   document.getElementById('noticia-page-title').textContent = n.titulo;
+  var autor = n.autor || 'Redacción RollerZone';
   document.getElementById('noticia-page-meta').innerHTML =
-    '<span>' + fmtDateES(n.fecha) + '</span>' +
-    (n.tiempo ? '<span style="color:var(--muted)">· ' + n.tiempo + ' lectura</span>' : '') +
-    '<span style="color:var(--muted)">· Por Redacción RollerZone</span>';
+    '<span>Por <strong>'+autor+'</strong></span>' +
+    '<span style="color:var(--muted)">· '+fmtDateES(n.fecha)+'</span>' +
+    (n.tiempo ? '<span style="color:var(--muted)">· '+n.tiempo+' lectura</span>' : '');
   document.getElementById('noticia-page-lead').textContent = n.excerpt || 'Sigue leyendo para descubrir todos los detalles.';
   var body = '';
   if(n.contenido && n.contenido.trim()){
@@ -112,15 +114,21 @@ function openNoticia(id){
     body += '<p>La combinación de nuevas instalaciones, metodologías de entrenamiento renovadas y patinadores con talento excepcional está dando sus frutos. Las cifras hablan por sí solas: más de 1.200 patinadores federados, 38 competiciones previstas para 2026.</p>';
     body += '<blockquote>El nivel que estamos viendo este año es simplemente increíble. Nunca habíamos tenido tanta densidad de talento en la élite nacional.</blockquote>';
     body += '<p>Los clubs tradicionales como el Gijón Patín Club, Barcelona Inline o Sevilla Rollers siguen siendo los pilares del patinaje español, pero nuevas organizaciones están emergiendo con fuerza.</p>';
-    body += '<h3>Mirando al futuro</h3>';
-    body += '<p>Con el calendario de competiciones internacionales que se avecina, la selección española tiene ante sí una oportunidad única para consolidar su posición entre las grandes potencias mundiales del patinaje de velocidad.</p>';
   }
   document.getElementById('noticia-page-body').innerHTML = body;
+
+  /* Botones compartir */
+  var pageUrl = encodeURIComponent(window.location.href);
+  var pageTitle = encodeURIComponent(n.titulo);
+  document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u='+pageUrl;
+  document.getElementById('share-whatsapp').href = 'https://wa.me/?text='+pageTitle+'%20'+pageUrl;
+  document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?text='+pageTitle+'&url='+pageUrl;
+
   var tagArr = [n.cat, 'Patinaje', 'España', '2026'];
   document.getElementById('noticia-page-tags').innerHTML = tagArr.map(function(t){ return '<span class="page-tag">'+t+'</span>'; }).join('');
   var others = DB.noticias.filter(function(x){ return x.id!==id; }).slice(0,4);
   document.getElementById('noticia-sidebar-list').innerHTML = others.map(function(x,i){
-    return '<div class="sidebar-news-item" onclick="openNoticia('+x.id+')"><div class="sidebar-news-num">0'+(i+1)+'</div><div><div class="sidebar-news-title">'+x.titulo+'</div><div class="sidebar-news-date">'+fmtDateES(x.fecha)+'</div></div></div>';
+    return '<div class="sidebar-news-item" onclick="openNoticia('+x.id+')">'+(x.img?'<img src="'+x.img+'" style="width:52px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border-solid);">':'<div class="sidebar-news-num">0'+(i+1)+'</div>')+'<div><div class="sidebar-news-title">'+x.titulo+'</div><div class="sidebar-news-date">'+fmtDateES(x.fecha)+'</div></div></div>';
   }).join('');
   document.getElementById('noticia-sidebar-eventos').innerHTML = DB.eventos.slice(0,2).map(function(e){
     return '<div class="sidebar-news-item" onclick="openEvento('+e.id+')"><div class="sidebar-news-num" style="font-size:18px;min-width:36px;text-align:center;line-height:1.1;"><div style="color:var(--gold)">'+dayStr(e.fecha)+'</div><div style="font-size:10px;color:var(--muted);font-family:\'Barlow Condensed\',sans-serif;letter-spacing:1px;">'+monthStr(e.fecha)+'</div></div><div><div class="sidebar-news-title">'+e.nombre+'</div><div class="sidebar-news-date">'+e.lugar+'</div></div></div>';
@@ -133,9 +141,6 @@ function openEvento(id){
   var e = DB.eventos.find(function(x){ return x.id===id; });
   if(!e) return;
   document.getElementById('evento-breadcrumb-title').textContent = e.nombre;
-  var heroImg = document.getElementById('evento-hero-img');
-  if(e.img){ heroImg.src=e.img; heroImg.style.display='block'; }
-  else { heroImg.style.display='none'; }
   document.getElementById('evento-hero-date-big').textContent = dayStr(e.fecha)+' '+monthStr(e.fecha);
   var badge = document.getElementById('evento-page-badge');
   badge.className = 'evento-badge ' + tipoClass(e.tipo);
@@ -160,9 +165,10 @@ function openEvento(id){
   ].map(function(r){
     return '<div class="evento-info-row"><div class="evento-info-icon">'+r.icon+'</div><div><div class="evento-info-label">'+r.label+'</div><div class="evento-info-value">'+r.value+'</div></div></div>';
   }).join('');
+  /* Cartel a pantalla completa */
   var cartelWrap = document.getElementById('evento-cartel-wrap');
   if(e.img){
-    cartelWrap.innerHTML = '<img class="evento-cartel-full" src="'+e.img+'" alt="Cartel '+e.nombre+'">';
+    cartelWrap.innerHTML = '<img class="evento-cartel-full-poster" src="'+e.img+'" alt="Cartel '+e.nombre+'">';
   } else {
     cartelWrap.innerHTML = '<div class="evento-cartel-placeholder-full"><svg width="60" height="60" viewBox="0 0 60 60" fill="none"><ellipse cx="30" cy="30" rx="24" ry="12" stroke="#F5A623" stroke-width="1.5"/><circle cx="30" cy="30" r="6" fill="#F5A623" opacity="0.3"/></svg><span>SIN CARTEL</span></div>';
   }
@@ -170,7 +176,9 @@ function openEvento(id){
     return '<div class="sidebar-news-item" onclick="openNoticia('+n.id+')"><div class="sidebar-news-num">0'+(i+1)+'</div><div><div class="sidebar-news-title">'+n.titulo+'</div><div class="sidebar-news-date">'+fmtDateES(n.fecha)+'</div></div></div>';
   }).join('');
   document.getElementById('eventos-relacionados').innerHTML = DB.eventos.filter(function(x){ return x.id!==id; }).slice(0,3).map(function(ev){
-    return '<div class="evento-card" onclick="openEvento('+ev.id+')"><div class="evento-cartel-placeholder" style="height:100px;margin-bottom:.6rem;">'+ev.nombre.substring(0,20)+'</div><div class="evento-card-inner"><div class="evento-date"><div class="evento-day">'+dayStr(ev.fecha)+'</div><div class="evento-month">'+monthStr(ev.fecha)+'</div></div><div class="evento-info"><div class="evento-badge '+tipoClass(ev.tipo)+'">'+ev.tipo+'</div><div class="evento-nombre">'+ev.nombre+'</div><div class="evento-lugar">📍 '+ev.lugar+'</div></div></div><div class="evento-card-arrow">Ver evento →</div></div>';
+    return '<div class="evento-card" onclick="openEvento('+ev.id+')">'+
+      (ev.img ? '<img class="evento-cartel" src="'+ev.img+'" alt="cartel" style="width:100%;height:180px;object-fit:contain;background:#111;border:1px solid var(--border-solid);">' : '<div class="evento-cartel-placeholder" style="height:80px;">'+ev.nombre.substring(0,20)+'</div>')+
+      '<div class="evento-card-inner"><div class="evento-date"><div class="evento-day">'+dayStr(ev.fecha)+'</div><div class="evento-month">'+monthStr(ev.fecha)+'</div></div><div class="evento-info"><div class="evento-badge '+tipoClass(ev.tipo)+'">'+ev.tipo+'</div><div class="evento-nombre">'+ev.nombre+'</div><div class="evento-lugar">📍 '+ev.lugar+'</div></div></div><div class="evento-card-arrow">Ver evento →</div></div>';
   }).join('');
   showPage('page-evento');
 }
@@ -183,7 +191,6 @@ function openEntrevista(id){
   var heroImg = document.getElementById('entrevista-hero-img');
   if(e.img){ heroImg.src=e.img; heroImg.style.display='block'; }
   else { heroImg.style.display='none'; }
-  // Avatar grande
   var initials = e.nombre.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('');
   var avatarEl = document.getElementById('entrevista-page-avatar-lg');
   if(e.img){ avatarEl.innerHTML = '<img src="'+e.img+'" alt="'+e.nombre+'">'; }
@@ -191,7 +198,6 @@ function openEntrevista(id){
   document.getElementById('entrevista-page-nombre').textContent = e.nombre;
   document.getElementById('entrevista-page-rol').textContent = e.rol;
   document.getElementById('entrevista-page-quote').textContent = e.quote;
-  // Body: parse Q&A
   var body = '';
   if(e.contenido && e.contenido.trim()){
     var lines = e.contenido.split('\n');
@@ -199,28 +205,29 @@ function openEntrevista(id){
     lines.forEach(function(line){
       line = line.trim(); if(!line) return;
       if(line.startsWith('P: ')){
-        if(currentQ){
-          body += '<div class="entrevista-qa"><div class="entrevista-q">'+currentQ+'</div><div class="entrevista-a">'+currentA+'</div></div>';
-        }
+        if(currentQ){ body += '<div class="entrevista-qa"><div class="entrevista-q">'+currentQ+'</div><div class="entrevista-a">'+currentA+'</div></div>'; }
         currentQ = line.slice(3); currentA = '';
-      } else if(line.startsWith('R: ')){
-        currentA = line.slice(3);
-      } else {
-        body += '<p>'+line+'</p>';
-      }
+      } else if(line.startsWith('R: ')){ currentA = line.slice(3); }
+      else { body += '<p>'+line+'</p>'; }
     });
     if(currentQ) body += '<div class="entrevista-qa"><div class="entrevista-q">'+currentQ+'</div><div class="entrevista-a">'+currentA+'</div></div>';
   } else {
-    body += '<div class="entrevista-qa"><div class="entrevista-q">¿Cuál es tu mayor motivación cada día?</div><div class="entrevista-a">La pasión por el deporte y el deseo de superarme constantemente. Cada entrenamiento es una oportunidad de ser mejor que ayer.</div></div>';
-    body += '<div class="entrevista-qa"><div class="entrevista-q">¿Qué le dirías a los jóvenes que quieren dedicarse al patinaje?</div><div class="entrevista-a">Que no se rindan nunca. Los primeros años son duros, pero si tienes pasión, el esfuerzo siempre acaba dando sus frutos.</div></div>';
-    body += '<div class="entrevista-qa"><div class="entrevista-q">¿Cuáles son tus objetivos para esta temporada?</div><div class="entrevista-a">Competir al máximo nivel y disfrutar del proceso. Los resultados llegan cuando trabajas bien y estás sano.</div></div>';
+    body += '<div class="entrevista-qa"><div class="entrevista-q">¿Cuál es tu mayor motivación cada día?</div><div class="entrevista-a">La pasión por el deporte y el deseo de superarme constantemente.</div></div>';
+  }
+  /* Galería de imágenes adicionales */
+  if(e.imagenes && e.imagenes.length > 0){
+    body += '<div class="entrevista-galeria">';
+    e.imagenes.forEach(function(imgUrl){
+      body += '<img src="'+imgUrl+'" alt="'+e.nombre+'" class="entrevista-galeria-img">';
+    });
+    body += '</div>';
   }
   document.getElementById('entrevista-page-body').innerHTML = body;
   var tagArr = (e.tags||'').split(',').map(function(t){ return t.trim(); });
   document.getElementById('entrevista-page-tags').innerHTML = tagArr.map(function(t){ return '<span class="page-tag">'+t+'</span>'; }).join('');
   document.getElementById('entrevista-sidebar-list').innerHTML = DB.entrevistas.filter(function(x){ return x.id!==id; }).map(function(x,i){
     var ini = x.nombre.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('');
-    return '<div class="sidebar-news-item" onclick="openEntrevista('+x.id+')"><div class="sidebar-news-num" style="font-size:16px;min-width:36px;text-align:center;font-family:\'Bebas Neue\',sans-serif;color:rgba(74,158,255,.4);">'+ini+'</div><div><div class="sidebar-news-title">'+x.nombre+'</div><div class="sidebar-news-date">'+x.rol+'</div></div></div>';
+    return '<div class="sidebar-news-item" onclick="openEntrevista('+x.id+')">'+(x.img?'<img src="'+x.img+'" style="width:40px;height:40px;object-fit:cover;border-radius:50%;flex-shrink:0;">':'<div class="sidebar-news-num" style="font-size:16px;min-width:36px;text-align:center;font-family:\'Bebas Neue\',sans-serif;color:rgba(74,158,255,.4);">'+ini+'</div>')+'<div><div class="sidebar-news-title">'+x.nombre+'</div><div class="sidebar-news-date">'+x.rol+'</div></div></div>';
   }).join('');
   document.getElementById('entrevista-sidebar-eventos').innerHTML = DB.eventos.slice(0,2).map(function(e){
     return '<div class="sidebar-news-item" onclick="openEvento('+e.id+')"><div class="sidebar-news-num" style="font-size:18px;min-width:36px;text-align:center;line-height:1.1;"><div style="color:var(--gold)">'+dayStr(e.fecha)+'</div><div style="font-size:10px;color:var(--muted);font-family:\'Barlow Condensed\',sans-serif;letter-spacing:1px;">'+monthStr(e.fecha)+'</div></div><div><div class="sidebar-news-title">'+e.nombre+'</div><div class="sidebar-news-date">'+e.lugar+'</div></div></div>';
@@ -228,55 +235,13 @@ function openEntrevista(id){
   showPage('page-entrevista');
 }
 
-/* =================== OPEN SPONSOR =================== */
-function openSponsor(id){
-  var s = DB.sponsors.find(function(x){ return x.id===id; });
-  if(!s) return;
-  document.getElementById('sponsor-breadcrumb-title').textContent = s.nombre;
-  var heroImg = document.getElementById('sponsor-hero-img');
-  if(s.img){ heroImg.src=s.img; heroImg.style.display='block'; }
-  else { heroImg.style.display='none'; }
-  // Logo
-  var logoWrap = document.getElementById('sponsor-page-logo-wrap');
-  if(s.img){ logoWrap.innerHTML = '<img src="'+s.img+'" alt="'+s.nombre+'" style="width:80px;height:80px;object-fit:contain;">'; }
-  else { logoWrap.textContent = s.nombre[0]; }
-  // Tier badge
-  var tierEl = document.getElementById('sponsor-page-tier');
-  tierEl.className = 'sponsor-hero-tier-badge ' + tierClass(s.tier);
-  tierEl.textContent = tierEmoji(s.tier) + ' Patrocinador ' + s.tier;
-  document.getElementById('sponsor-page-name').textContent = s.nombre;
-  document.getElementById('sponsor-page-tagline').textContent = s.tagline || '';
-  // Descripción
-  var descHTML = '';
-  if(s.desc){ s.desc.split('\n').forEach(function(p){ if(p.trim()) descHTML += '<p>'+p+'</p>'; }); }
-  else { descHTML = '<p>Información sobre este patrocinador próximamente.</p>'; }
-  document.getElementById('sponsor-page-desc').innerHTML = descHTML;
-  // Info rows
-  document.getElementById('sponsor-info-rows').innerHTML = [
-    {icon:'🏷️',label:'Nivel',value:s.tier},
-    {icon:'📦',label:'Sector',value:s.sector||'—'},
-    {icon:'🌐',label:'Web',value:s.web||'—'},
-  ].map(function(r){
-    return '<div class="sponsor-info-row"><div class="sponsor-info-icon">'+r.icon+'</div><div><div class="sponsor-info-label">'+r.label+'</div><div class="sponsor-info-value">'+r.value+'</div></div></div>';
-  }).join('');
-  // Web btn
-  if(s.web){ document.getElementById('sponsor-web-btn').onclick = function(){ window.open(s.web,'_blank'); }; }
-  // Otros sponsors
-  document.getElementById('otros-sponsors-grid').innerHTML = DB.sponsors.filter(function(x){ return x.id!==id; }).slice(0,4).map(function(sp){
-    return '<div class="sponsor-card" onclick="openSponsor('+sp.id+')" style="padding:1.25rem;"><div class="sponsor-logo-wrap"><div class="sponsor-logo-placeholder" style="font-size:20px;">'+sp.nombre[0]+'</div></div><div class="sponsor-name">'+sp.nombre+'</div><div class="sponsor-desc">'+sp.tagline+'</div></div>';
-  }).join('');
-  // Sidebar news
-  document.getElementById('sponsor-sidebar-news').innerHTML = DB.noticias.slice(0,3).map(function(n,i){
-    return '<div class="sidebar-news-item" onclick="openNoticia('+n.id+')"><div class="sidebar-news-num">0'+(i+1)+'</div><div><div class="sidebar-news-title">'+n.titulo+'</div><div class="sidebar-news-date">'+fmtDateES(n.fecha)+'</div></div></div>';
-  }).join('');
-  showPage('page-sponsor');
-}
-
 /* =================== OPEN REVISTA =================== */
 function openRevista(num){
   var r = DB.revista.find(function(x){ return x.num===num; });
   if(!r) return;
-  alert('Revista RollerZone Nº'+r.num+' — '+r.titulo+'\n\nPróximamente disponible para visualización y compra en línea.');
+  var tel = DB.whatsapp || '34600000000';
+  var msg = encodeURIComponent('Hola! Quiero comprar la revista RollerZone Nº'+r.num+' — '+r.titulo+' ('+r.precio+')');
+  window.open('https://wa.me/'+tel+'?text='+msg, '_blank');
 }
 
 /* =================== RENDER HOME =================== */
@@ -328,21 +293,22 @@ function renderEventos(){
   DB.eventos.forEach(function(e, idx){
     var d = e.fecha || '';
     var hidden = idx >= maxVisible && !DB.eventosExpanded;
-    html += '<div class="evento-card'+(hidden?' eventos-hidden':'')+'" onclick="openEvento('+e.id+')">';
-    if(e.img){ html += '<img class="evento-cartel" src="'+e.img+'" alt="cartel">'; }
-    else { html += '<div class="evento-cartel-placeholder">SIN CARTEL</div>'; }
-    html += '<div class="evento-card-inner">';
-    html += '<div class="evento-date"><div class="evento-day">'+dayStr(d)+'</div><div class="evento-month">'+monthStr(d)+'</div></div>';
-    html += '<div class="evento-info"><div class="evento-badge '+tipoClass(e.tipo)+'">'+e.tipo+'</div>';
+    html += '<div class="evento-card evento-card-poster'+(hidden?' eventos-hidden':'')+'" onclick="openEvento('+e.id+')">';
+    /* Cartel completo sin recorte */
+    if(e.img){
+      html += '<div class="evento-poster-wrap"><img class="evento-poster-img" src="'+e.img+'" alt="cartel '+e.nombre+'"></div>';
+    } else {
+      html += '<div class="evento-poster-wrap evento-poster-placeholder"><div class="evento-poster-date-big">'+dayStr(d)+'<span>'+monthStr(d)+'</span></div><div class="evento-poster-nombre">'+e.nombre+'</div></div>';
+    }
+    html += '<div class="evento-card-footer">';
+    html += '<div class="evento-badge '+tipoClass(e.tipo)+'">'+e.tipo+'</div>';
     html += '<div class="evento-nombre">'+e.nombre+'</div>';
     html += '<div class="evento-lugar">📍 '+e.lugar+'</div>';
     if(e.inscritos) html += '<div class="evento-inscritos">✓ '+e.inscritos+'</div>';
-    html += '</div></div>';
     html += '<div class="evento-card-arrow">Ver detalles →</div>';
-    html += '</div>';
+    html += '</div></div>';
   });
   grid.innerHTML = html;
-  // Show "ver más" button if there are more than 6
   var btnWrap = document.getElementById('eventos-show-more-btn');
   if(DB.eventos.length > maxVisible){
     btnWrap.style.display = 'block';
@@ -364,12 +330,19 @@ function renderEntrevistas(){
     var tags = (e.tags||'').split(',').map(function(t){ return '<span class="entrevista-tag">'+t.trim()+'</span>'; }).join('');
     var initials = e.nombre.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('');
     html += '<div class="entrevista-card" onclick="openEntrevista('+e.id+')">';
+    /* Foto del entrevistado en grande si existe */
+    if(e.img){
+      html += '<div class="entrevista-card-foto"><img src="'+e.img+'" alt="'+e.nombre+'"></div>';
+    } else {
+      html += '<div class="entrevista-card-foto entrevista-card-foto-placeholder">'+initials+'</div>';
+    }
+    html += '<div class="entrevista-card-body">';
     html += '<div class="entrevista-top">';
-    html += '<div class="entrevista-avatar">'+(e.img?'<img src="'+e.img+'" alt="">':initials)+'</div>';
     html += '<div><div class="entrevista-nombre">'+e.nombre+'</div><div class="entrevista-rol">'+e.rol+'</div></div>';
     html += '</div><p class="entrevista-quote">'+e.quote+'</p>';
     html += '<div class="entrevista-tags">'+tags+'</div>';
-    html += '<div class="entrevista-link">Leer entrevista completa →</div></div>';
+    html += '<div class="entrevista-link">Leer entrevista completa →</div>';
+    html += '</div></div>';
   });
   grid.innerHTML = html;
 }
@@ -378,16 +351,22 @@ function renderSponsors(){
   var grid = document.getElementById('sponsors-grid');
   var html = '';
   DB.sponsors.forEach(function(s){
-    html += '<div class="sponsor-card" onclick="openSponsor('+s.id+')">';
-    html += '<div class="sponsor-logo-wrap">';
-    if(s.img){ html += '<img class="sponsor-logo-img" src="'+s.img+'" alt="'+s.nombre+'">'; }
-    else { html += '<div class="sponsor-logo-placeholder">'+s.nombre[0]+'</div>'; }
+    html += '<div class="sponsor-card-v2">';
+    /* Tier accent */
+    html += '<div class="sponsor-tier-accent '+tierClass(s.tier)+'">'+tierEmoji(s.tier)+' '+s.tier+'</div>';
+    /* Logo */
+    html += '<div class="sponsor-logo-wrap-v2">';
+    if(s.img){ html += '<img class="sponsor-logo-img-v2" src="'+s.img+'" alt="'+s.nombre+'">'; }
+    else { html += '<div class="sponsor-logo-placeholder-v2">'+s.nombre.substring(0,2).toUpperCase()+'</div>'; }
     html += '</div>';
-    html += '<div class="sponsor-name">'+s.nombre+'</div>';
-    html += '<div class="sponsor-desc">'+s.tagline+'</div>';
-    html += '<div class="sponsor-tier '+tierClass(s.tier)+'">'+tierEmoji(s.tier)+' '+s.tier+'</div>';
-    html += '<div class="sponsor-arrow">Ver más →</div>';
-    html += '</div>';
+    html += '<div class="sponsor-name-v2">'+s.nombre+'</div>';
+    html += '<div class="sponsor-tagline-v2">'+s.tagline+'</div>';
+    html += '<div class="sponsor-desc-v2">'+s.desc+'</div>';
+    /* Links */
+    html += '<div class="sponsor-links-v2">';
+    if(s.web){ html += '<a href="'+s.web+'" target="_blank" class="sponsor-link-btn" onclick="event.stopPropagation()">🌐 Web</a>'; }
+    if(s.social){ html += '<a href="'+s.social+'" target="_blank" class="sponsor-link-btn sponsor-link-social" onclick="event.stopPropagation()">📱 Redes</a>'; }
+    html += '</div></div>';
   });
   grid.innerHTML = html;
 }
@@ -397,16 +376,16 @@ function renderColaboradores(){
   var html = '';
   DB.colaboradores.forEach(function(c){
     var initials = c.nombre.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('');
-    html += '<div class="colaborador-card">';
-    html += '<div class="colaborador-avatar">';
-    if(c.img){ html += '<img src="'+c.img+'" alt="'+c.nombre+'">'; }
-    else { html += initials; }
-    html += '<div class="colaborador-avatar-ring"></div></div>';
-    html += '<div class="colaborador-nombre">'+c.nombre+'</div>';
-    html += '<div class="colaborador-rol">'+c.rol+'</div>';
-    html += '<div class="colaborador-bio">'+c.bio+'</div>';
-    if(c.social){ html += '<div class="colaborador-social"><span class="colab-social-btn">'+c.social+'</span></div>'; }
-    html += '<div class="colaborador-desde">Colabora desde '+c.desde+'</div>';
+    html += '<div class="equipo-card">';
+    html += '<div class="equipo-foto-wrap">';
+    if(c.img){ html += '<img class="equipo-foto" src="'+c.img+'" alt="'+c.nombre+'">'; }
+    else { html += '<div class="equipo-foto equipo-foto-placeholder">'+initials+'</div>'; }
+    html += '</div>';
+    html += '<div class="equipo-nombre">'+c.nombre+'</div>';
+    html += '<div class="equipo-rol">'+c.rol+'</div>';
+    html += '<div class="equipo-bio">'+c.bio+'</div>';
+    if(c.social){ html += '<div class="equipo-social"><span class="colab-social-btn">'+c.social+'</span></div>'; }
+    html += '<div class="equipo-desde">Desde '+c.desde+'</div>';
     html += '</div>';
   });
   grid.innerHTML = html;
@@ -474,7 +453,7 @@ function renderAdminEventos(){
   var h = '';
   DB.eventos.forEach(function(e){
     h += '<tr>';
-    h += e.img ? '<td><img class="tbl-img" src="'+e.img+'" alt="" style="height:48px;"></td>' : '<td><div class="tbl-img-placeholder" style="height:48px;">CARTEL</div></td>';
+    h += e.img ? '<td><img class="tbl-img" src="'+e.img+'" alt="" style="height:48px;object-fit:contain;"></td>' : '<td><div class="tbl-img-placeholder" style="height:48px;">CARTEL</div></td>';
     h += '<td style="font-weight:600;">'+e.nombre+'</td>';
     h += '<td>'+e.fecha+'</td>';
     h += '<td>'+e.lugar+'</td>';
@@ -510,7 +489,7 @@ function renderAdminSponsors(){
     h += '<tr>';
     h += s.img ? '<td><img class="tbl-img" src="'+s.img+'" alt=""></td>' : '<td><div class="tbl-img-placeholder">'+s.nombre[0]+'</div></td>';
     h += '<td style="font-weight:600;">'+s.nombre+'</td>';
-    h += '<td><span class="tbl-badge '+tblBadgeClass('nacional')+'" style="background:rgba(245,166,35,.15);color:var(--gold);">'+s.tier+'</span></td>';
+    h += '<td><span class="tbl-badge" style="background:rgba(245,166,35,.15);color:var(--gold);">'+s.tier+'</span></td>';
     h += '<td style="max-width:200px;font-size:12px;color:var(--muted);">'+s.tagline+'</td>';
     h += '<td><div class="tbl-actions"><button class="btn-edit" onclick="editSponsor('+s.id+')">Editar</button><button class="btn-del" onclick="delSponsor('+s.id+')">Eliminar</button></div></td>';
     h += '</tr>';
@@ -554,7 +533,7 @@ function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 
 function openModalNoticia(){
   document.getElementById('noticia-id').value='';
-  ['noticia-titulo','noticia-excerpt','noticia-contenido','noticia-tiempo','noticia-img-url'].forEach(function(f){ document.getElementById(f).value=''; });
+  ['noticia-titulo','noticia-excerpt','noticia-contenido','noticia-tiempo','noticia-img-url','noticia-autor'].forEach(function(f){ document.getElementById(f).value=''; });
   document.getElementById('noticia-cat').value='Reportaje';
   document.getElementById('noticia-fecha').value='';
   document.getElementById('noticia-featured').checked=false;
@@ -571,6 +550,7 @@ function editNoticia(id){
   document.getElementById('noticia-contenido').value=n.contenido||'';
   document.getElementById('noticia-tiempo').value=n.tiempo;
   document.getElementById('noticia-img-url').value=n.img||'';
+  document.getElementById('noticia-autor').value=n.autor||'';
   document.getElementById('noticia-featured').checked=n.featured;
   document.getElementById('modal-noticia-title').textContent='Editar Noticia';
   openModal('modal-noticia');
@@ -579,7 +559,7 @@ function saveNoticia(){
   var id = document.getElementById('noticia-id').value;
   var titulo = document.getElementById('noticia-titulo').value.trim();
   if(!titulo){ showToast('El título es obligatorio',true); return; }
-  var data = { titulo:titulo, cat:document.getElementById('noticia-cat').value, fecha:document.getElementById('noticia-fecha').value, excerpt:document.getElementById('noticia-excerpt').value, contenido:document.getElementById('noticia-contenido').value, tiempo:document.getElementById('noticia-tiempo').value, img:document.getElementById('noticia-img-url').value, featured:document.getElementById('noticia-featured').checked };
+  var data = { titulo:titulo, cat:document.getElementById('noticia-cat').value, fecha:document.getElementById('noticia-fecha').value, excerpt:document.getElementById('noticia-excerpt').value, contenido:document.getElementById('noticia-contenido').value, tiempo:document.getElementById('noticia-tiempo').value, img:document.getElementById('noticia-img-url').value, autor:document.getElementById('noticia-autor').value||'Redacción RollerZone', featured:document.getElementById('noticia-featured').checked };
   if(data.featured) DB.noticias.forEach(function(n){ n.featured=false; });
   if(id){ var idx=DB.noticias.findIndex(function(x){ return x.id==id; }); if(idx>-1){ data.id=parseInt(id); DB.noticias[idx]=data; } }
   else { data.id=genId(); DB.noticias.unshift(data); }
@@ -649,7 +629,7 @@ function saveEntrevista(){
   var id = document.getElementById('entrevista-id').value;
   var nombre = document.getElementById('entrevista-nombre').value.trim();
   if(!nombre){ showToast('El nombre es obligatorio',true); return; }
-  var data = { nombre:nombre, rol:document.getElementById('entrevista-rol').value, quote:document.getElementById('entrevista-quote').value, contenido:document.getElementById('entrevista-contenido').value, tags:document.getElementById('entrevista-tags').value, img:document.getElementById('entrevista-img-url').value };
+  var data = { nombre:nombre, rol:document.getElementById('entrevista-rol').value, quote:document.getElementById('entrevista-quote').value, contenido:document.getElementById('entrevista-contenido').value, tags:document.getElementById('entrevista-tags').value, img:document.getElementById('entrevista-img-url').value, imagenes:[] };
   if(id){ var idx=DB.entrevistas.findIndex(function(x){ return x.id==id; }); if(idx>-1){ data.id=parseInt(id); DB.entrevistas[idx]=data; } }
   else { data.id=genId(); DB.entrevistas.push(data); }
   closeModal('modal-entrevista'); renderAdminEntrevistas(); renderEntrevistas(); showToast('✓ Entrevista guardada');
@@ -662,7 +642,7 @@ function delEntrevista(id){
 
 function openModalSponsor(){
   document.getElementById('sponsor-id').value='';
-  ['sponsor-nombre','sponsor-tagline','sponsor-desc','sponsor-web','sponsor-sector','sponsor-img-url'].forEach(function(f){ document.getElementById(f).value=''; });
+  ['sponsor-nombre','sponsor-tagline','sponsor-desc','sponsor-web','sponsor-sector','sponsor-img-url','sponsor-social'].forEach(function(f){ document.getElementById(f).value=''; });
   document.getElementById('sponsor-tier').value='Oro';
   document.getElementById('modal-sponsor-title').textContent='Nuevo Patrocinador';
   openModal('modal-sponsor');
@@ -677,6 +657,7 @@ function editSponsor(id){
   document.getElementById('sponsor-web').value=s.web||'';
   document.getElementById('sponsor-sector').value=s.sector||'';
   document.getElementById('sponsor-img-url').value=s.img||'';
+  document.getElementById('sponsor-social').value=s.social||'';
   document.getElementById('modal-sponsor-title').textContent='Editar Patrocinador';
   openModal('modal-sponsor');
 }
@@ -684,7 +665,7 @@ function saveSponsor(){
   var id = document.getElementById('sponsor-id').value;
   var nombre = document.getElementById('sponsor-nombre').value.trim();
   if(!nombre){ showToast('El nombre es obligatorio',true); return; }
-  var data = { nombre:nombre, tier:document.getElementById('sponsor-tier').value, tagline:document.getElementById('sponsor-tagline').value, desc:document.getElementById('sponsor-desc').value, web:document.getElementById('sponsor-web').value, sector:document.getElementById('sponsor-sector').value, img:document.getElementById('sponsor-img-url').value };
+  var data = { nombre:nombre, tier:document.getElementById('sponsor-tier').value, tagline:document.getElementById('sponsor-tagline').value, desc:document.getElementById('sponsor-desc').value, web:document.getElementById('sponsor-web').value, sector:document.getElementById('sponsor-sector').value, img:document.getElementById('sponsor-img-url').value, social:document.getElementById('sponsor-social').value };
   if(id){ var idx=DB.sponsors.findIndex(function(x){ return x.id==id; }); if(idx>-1){ data.id=parseInt(id); DB.sponsors[idx]=data; } }
   else { data.id=genId(); DB.sponsors.push(data); }
   closeModal('modal-sponsor'); renderAdminSponsors(); renderSponsors(); showToast('✓ Patrocinador guardado');
@@ -698,7 +679,7 @@ function delSponsor(id){
 function openModalColaborador(){
   document.getElementById('colaborador-id').value='';
   ['colaborador-nombre','colaborador-rol','colaborador-bio','colaborador-desde','colaborador-social','colaborador-img-url'].forEach(function(f){ document.getElementById(f).value=''; });
-  document.getElementById('modal-colaborador-title').textContent='Nuevo Colaborador';
+  document.getElementById('modal-colaborador-title').textContent='Nuevo Miembro del Equipo';
   openModal('modal-colaborador');
 }
 function editColaborador(id){
@@ -706,11 +687,11 @@ function editColaborador(id){
   document.getElementById('colaborador-id').value=c.id;
   document.getElementById('colaborador-nombre').value=c.nombre;
   document.getElementById('colaborador-rol').value=c.rol;
-  document.getElementById('colaborador-bio').value=c.bio||'';
-  document.getElementById('colaborador-desde').value=c.desde||'';
+  document.getElementById('colaborador-bio').value=c.bio;
+  document.getElementById('colaborador-desde').value=c.desde;
   document.getElementById('colaborador-social').value=c.social||'';
   document.getElementById('colaborador-img-url').value=c.img||'';
-  document.getElementById('modal-colaborador-title').textContent='Editar Colaborador';
+  document.getElementById('modal-colaborador-title').textContent='Editar Miembro del Equipo';
   openModal('modal-colaborador');
 }
 function saveColaborador(){
@@ -720,13 +701,13 @@ function saveColaborador(){
   var data = { nombre:nombre, rol:document.getElementById('colaborador-rol').value, bio:document.getElementById('colaborador-bio').value, desde:document.getElementById('colaborador-desde').value, social:document.getElementById('colaborador-social').value, img:document.getElementById('colaborador-img-url').value };
   if(id){ var idx=DB.colaboradores.findIndex(function(x){ return x.id==id; }); if(idx>-1){ data.id=parseInt(id); DB.colaboradores[idx]=data; } }
   else { data.id=genId(); DB.colaboradores.push(data); }
-  closeModal('modal-colaborador'); renderAdminColaboradores(); renderColaboradores(); showToast('✓ Colaborador guardado');
+  closeModal('modal-colaborador'); renderAdminColaboradores(); renderColaboradores(); showToast('✓ Miembro del equipo guardado');
   document.getElementById('dash-colaboradores').textContent = DB.colaboradores.length;
 }
 function delColaborador(id){
-  if(!confirm('¿Eliminar este colaborador?')) return;
+  if(!confirm('¿Eliminar este miembro del equipo?')) return;
   DB.colaboradores = DB.colaboradores.filter(function(c){ return c.id!==id; });
-  renderAdminColaboradores(); renderColaboradores(); showToast('Colaborador eliminado');
+  renderAdminColaboradores(); renderColaboradores(); showToast('Miembro eliminado');
   document.getElementById('dash-colaboradores').textContent = DB.colaboradores.length;
 }
 

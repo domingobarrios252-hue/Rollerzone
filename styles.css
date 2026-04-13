@@ -594,3 +594,104 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:2.5rem
   .sponsors-grid,.colaboradores-grid{grid-template-columns:1fr 1fr;}
   .revista-numeros-grid{grid-template-columns:repeat(3,1fr);}
 }
+
+/* ================================================================
+   NUEVOS ESTILOS — MEJORAS 2026
+   ================================================================ */
+
+/* BADGE AUTONOMICO */
+.badge-autonomico{background:rgba(167,139,250,.15);color:var(--purple);border:1px solid rgba(167,139,250,.3);}
+
+/* ===== BOTONES COMPARTIR NOTICIAS ===== */
+.share-bar{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:2rem 0 1.5rem;padding:1.25rem 1.5rem;background:var(--card);border:1px solid var(--border-solid);border-left:3px solid var(--gold);}
+.share-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.share-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:opacity .2s;text-decoration:none;}
+.share-fb{background:#1877f2;color:#fff;}
+.share-wa{background:#25d366;color:#fff;}
+.share-tw{background:#000;color:#fff;}
+.share-btn:hover{opacity:.85;}
+@media(max-width:520px){.share-bar{flex-direction:column;align-items:flex-start;}}
+
+/* ===== EVENTOS — TARJETAS TIPO PÓSTER ===== */
+.eventos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.evento-card-poster{background:var(--card);cursor:pointer;transition:transform .25s,box-shadow .25s;border:1px solid var(--border-solid);overflow:hidden;}
+.evento-card-poster:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5);}
+.evento-poster-wrap{width:100%;background:#111;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:240px;}
+.evento-poster-img{width:100%;height:auto;max-height:340px;object-fit:contain;display:block;}
+.evento-poster-placeholder{flex-direction:column;align-items:center;justify-content:center;gap:.75rem;min-height:240px;background:linear-gradient(135deg,#1a1a2e,#0f3460);}
+.evento-poster-date-big{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;color:var(--gold);text-align:center;}
+.evento-poster-date-big span{display:block;font-size:20px;color:var(--muted);letter-spacing:3px;}
+.evento-poster-nombre{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(240,237,232,.6);text-align:center;padding:0 1rem;}
+.evento-card-footer{padding:1.25rem;}
+.evento-card-footer .evento-badge{margin-bottom:.5rem;}
+.evento-card-footer .evento-nombre{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.2;}
+.evento-card-footer .evento-lugar{font-size:12px;color:var(--muted);}
+.evento-card-footer .evento-inscritos{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--green);margin-top:.3rem;font-weight:600;}
+.evento-card-footer .evento-card-arrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:0;margin-top:.75rem;transition:opacity .2s;}
+.evento-card-poster:hover .evento-card-arrow{opacity:1;}
+
+/* Cartel en página individual — sin recorte */
+.evento-cartel-full-poster{width:100%;height:auto;max-width:100%;display:block;border:1px solid var(--border-solid);}
+
+/* ===== ENTREVISTAS — FOTO EN TARJETA ===== */
+.entrevistas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.entrevista-card{background:var(--card);cursor:pointer;transition:background .2s;overflow:hidden;}
+.entrevista-card:hover{background:var(--card2);}
+.entrevista-card-foto{width:100%;height:220px;overflow:hidden;background:var(--card2);display:flex;align-items:center;justify-content:center;}
+.entrevista-card-foto img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.entrevista-card:hover .entrevista-card-foto img{transform:scale(1.05);}
+.entrevista-card-foto-placeholder{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--gold);background:linear-gradient(135deg,#1a1a2e,#0d1b2e);}
+.entrevista-card-body{padding:1.5rem;}
+.entrevista-top{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;}
+
+/* ===== GALERÍA ENTREVISTA ===== */
+.entrevista-galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:2rem 0;}
+.entrevista-galeria-img{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--border-solid);cursor:pointer;transition:opacity .2s;}
+.entrevista-galeria-img:hover{opacity:.85;}
+
+/* ===== PATROCINADORES — SOLO TARJETAS (SIN CLICK A PÁGINA) ===== */
+.sponsors-grid-v2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+@media(min-width:900px){.sponsors-grid-v2{grid-template-columns:repeat(4,1fr);}}
+.sponsor-card-v2{background:var(--card);border:1px solid var(--border-solid);padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+.sponsor-card-v2:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
+.sponsor-tier-accent{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;margin-bottom:1rem;border-radius:2px;}
+.sponsor-logo-wrap-v2{width:100%;height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.sponsor-logo-img-v2{max-width:120px;max-height:80px;object-fit:contain;}
+.sponsor-logo-placeholder-v2{width:80px;height:80px;background:var(--card2);border:1px solid var(--border-solid);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);}
+.sponsor-name-v2{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:.4rem;}
+.sponsor-tagline-v2{font-size:12px;color:var(--gold);font-weight:600;margin-bottom:.6rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;}
+.sponsor-desc-v2{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:1rem;flex:1;}
+.sponsor-links-v2{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:auto;}
+.sponsor-link-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);color:var(--muted);text-decoration:none;transition:all .2s;}
+.sponsor-link-btn:hover{border-color:var(--gold);color:var(--gold);}
+.sponsor-link-social:hover{border-color:var(--purple);color:var(--purple);}
+
+/* ===== EQUIPO ROLLERZONE ===== */
+.equipo-card{background:var(--card);padding:0;overflow:hidden;display:flex;flex-direction:column;transition:background .2s;}
+.equipo-card:hover{background:var(--card2);}
+.equipo-foto-wrap{width:100%;aspect-ratio:1;overflow:hidden;background:var(--card2);}
+.equipo-foto{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.equipo-card:hover .equipo-foto{transform:scale(1.05);}
+.equipo-foto-placeholder{display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--purple);background:linear-gradient(135deg,#1a1028,#0d0a1e);}
+.equipo-nombre{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--text);padding:.85rem 1.25rem .2rem;line-height:1.2;}
+.equipo-rol{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);padding:0 1.25rem .6rem;}
+.equipo-bio{font-size:12px;color:var(--muted);line-height:1.55;padding:0 1.25rem .75rem;flex:1;}
+.equipo-social{padding:0 1.25rem .5rem;}
+.equipo-desde{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(167,139,250,.4);border-top:1px solid var(--border-solid);padding:.6rem 1.25rem;margin-top:auto;}
+
+/* ===== WHATSAPP BOTÓN REVISTA ===== */
+.btn-primary svg{vertical-align:middle;}
+
+/* Responsive nuevos componentes */
+@media(max-width:900px){
+  .eventos-grid{grid-template-columns:repeat(2,1fr);}
+  .entrevistas-grid{grid-template-columns:1fr;}
+  .sponsors-grid-v2{grid-template-columns:repeat(2,1fr);}
+  .colaboradores-grid{grid-template-columns:repeat(2,1fr);}
+  .entrevista-galeria{grid-template-columns:1fr;}
+}
+@media(max-width:520px){
+  .eventos-grid{grid-template-columns:1fr;}
+  .sponsors-grid-v2{grid-template-columns:1fr;}
+  .colaboradores-grid{grid-template-columns:repeat(2,1fr);}
+}

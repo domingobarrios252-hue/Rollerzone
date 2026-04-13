@@ -1,7 +1,7 @@
 /* =================== DATA =================== */
 var DB = {
   noticias: [
-    {id:1,titulo:'Gijón: La Meca del Patinaje de Velocidad Español',cat:'Reportaje',fecha:'2026-04-03',excerpt:'La pista Moreda cumple 30 años formando campeones. Hablamos con los protagonistas de una historia que define generaciones enteras.',tiempo:'8 min',img:'',contenido:'',featured:true},
+    {id:1,titulo:'Lagos 2026 arde en los 500m',cat:'Reportaje',fecha:'2026-04-03',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje con actuaciones que ya son historia.',tiempo:'8 min',img:'https://domingobarrios252-hu.github.io/rollerzone/images/jessi.jpg',contenido:'',featured:true},
     {id:2,titulo:'Chevi Guzmán encabeza el ranking nacional tras la tercera jornada',cat:'Resultados',fecha:'2026-04-02',excerpt:'Actuación brillante del patinador asturiano que supera a sus rivales por un margen histórico.',tiempo:'4 min',img:'',contenido:'',featured:false},
     {id:3,titulo:'España cierra la temporada europea con tres medallas en Bogotá',cat:'Selección',fecha:'2026-04-01',excerpt:'El equipo nacional demuestra su nivel en el Campeonato Internacional con un balance histórico.',tiempo:'6 min',img:'',contenido:'',featured:false},
     {id:4,titulo:'Los secretos del viraje perfecto: análisis biomecánico del sprint',cat:'Técnica',fecha:'2026-03-31',excerpt:'El entrenador nacional Carlos Redondo explica cómo los patinadores élite optimizan la posición en curva.',tiempo:'5 min',img:'',contenido:'',featured:false},
@@ -42,7 +42,7 @@ var DB = {
     {num:6,titulo:'Invierno de Campeones',subtitulo:'Especial pista cubierta',precio:'6€',img:''},
     {num:7,titulo:'La Nueva Generación',subtitulo:'Patinaje español 2026',precio:'6€',img:''},
   ],
-  hero:{tag:'En Vivo · Abril 2026',titulo:'LAGOS 2026 <em>ARDE</em> EN LOS 500M',meta:'Speed Track European Series · <span>Portugal</span>',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje.',img:'',num:'01'},
+  hero:{tag:'En Vivo · Abril 2026',titulo:'LAGOS 2026 <em>ARDE</em> EN LOS 500M',meta:'Speed Track European Series · <span>Portugal</span>',excerpt:'Velocidad pura, emoción sin control y finales de infarto. Lagos se convierte en el epicentro mundial del patinaje.',img:'https://domingobarrios252-hu.github.io/rollerzone/images/jessi.jpg',num:'01'},
   ticker:['Chevi Guzmán bate el récord de pista en 500m','Liga Nacional 3ª División · Jornada 4 en curso','Open Madrid 2026 · Inscripciones abiertas','Daniel Milagros convocado con la selección española','Adrián Alonso · Nuevo patrocinador con Bont Skates','Campeonato Internacional Bogotá · Resultados disponibles','Livio Wenger debuta en la Liga Nacional 2026'],
   nextId:20,
   eventosExpanded:false

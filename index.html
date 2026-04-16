@@ -87,74 +87,7 @@
       <div class="ticker-track" id="ticker-track"></div>
     </div>
   </div>
-function openNoticia(id){
-  var n = DB.noticias.find(function(x){ return x.id===id; });
-  if(!n) return;
 
-  /* Incrementar visitas */
-  n.visitas = (n.visitas || 0) + 1;
-
-  document.getElementById('noticia-breadcrumb-title').textContent = n.titulo.substring(0,40)+'…';
-  var heroImg = document.getElementById('noticia-hero-img');
-  if(n.img){ heroImg.src=n.img; heroImg.style.display='block'; }
-  else { heroImg.style.display='none'; }
-  document.getElementById('noticia-page-cat').className = 'page-noticia-category ' + catClass(n.cat);
-  document.getElementById('noticia-page-cat').textContent = n.cat;
-  document.getElementById('noticia-page-title').textContent = n.titulo;
-
-  var autor = n.autor || 'Redacción RollerZone';
-  var seccion = n.seccion ? '<span style="color:var(--gold);font-size:11px;letter-spacing:1px;text-transform:uppercase;">'+n.seccion+'</span> · ' : '';
-  document.getElementById('noticia-page-meta').innerHTML =
-    seccion +
-    '<span>Por <strong>'+autor+'</strong></span>' +
-    '<span style="color:var(--muted)">· '+fmtDateES(n.fecha)+'</span>' +
-    (n.tiempo ? '<span style="color:var(--muted)">· '+n.tiempo+' lectura</span>' : '') +
-    '<span style="color:var(--muted)">· 👁 '+n.visitas+' visita'+(n.visitas===1?'':'s')+'</span>';
-
-  document.getElementById('noticia-page-lead').textContent = n.excerpt || 'Sigue leyendo para descubrir todos los detalles.';
-  var body = '';
-  if(n.contenido && n.contenido.trim()){
-    n.contenido.split('\n').forEach(function(line){
-      line = line.trim(); if(!line) return;
-      if(line.startsWith('### ')) body += '<h3>' + line.slice(4) + '</h3>';
-      else if(line.startsWith('> ')) body += '<blockquote>' + line.slice(2) + '</blockquote>';
-      else body += '<p>' + line + '</p>';
-    });
-  } else {
-    body = '<p>El patinaje de velocidad en España vive uno de sus mejores momentos en términos de nivel competitivo y participación. Los datos de esta temporada confirman una tendencia al alza que los expertos llevan años prediciendo.</p>';
-    body += '<h3>Un momento histórico</h3>';
-    body += '<p>La combinación de nuevas instalaciones, metodologías de entrenamiento renovadas y patinadores con talento excepcional está dando sus frutos. Las cifras hablan por sí solas: más de 1.200 patinadores federados, 38 competiciones previstas para 2026.</p>';
-    body += '<blockquote>El nivel que estamos viendo este año es simplemente increíble. Nunca habíamos tenido tanta densidad de talento en la élite nacional.</blockquote>';
-    body += '<p>Los clubs tradicionales como el Gijón Patín Club, Barcelona Inline o Sevilla Rollers siguen siendo los pilares del patinaje español, pero nuevas organizaciones están emergiendo con fuerza.</p>';
-  }
-  document.getElementById('noticia-page-body').innerHTML = body;
-
-  /* Botones compartir — sin Twitter, con Instagram (copia enlace) */
-  var pageUrl = encodeURIComponent(window.location.href);
-  var pageTitle = encodeURIComponent(n.titulo);
-  document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u='+pageUrl;
-  document.getElementById('share-whatsapp').href = 'https://wa.me/?text='+pageTitle+'%20'+pageUrl;
-  document.getElementById('share-instagram').onclick = function(){
-    navigator.clipboard.writeText(decodeURIComponent(window.location.href)).then(function(){
-      var btn = document.getElementById('share-instagram');
-      var orig = btn.innerHTML;
-      btn.innerHTML = '✓ Enlace copiado';
-      setTimeout(function(){ btn.innerHTML = orig; }, 2000);
-    });
-    return false;
-  };
-
-  var tagArr = [n.cat, 'Patinaje', 'España', '2026'];
-  document.getElementById('noticia-page-tags').innerHTML = tagArr.map(function(t){ return '<span class="page-tag">'+t+'</span>'; }).join('');
-  var others = DB.noticias.filter(function(x){ return x.id!==id; }).slice(0,4);
-  document.getElementById('noticia-sidebar-list').innerHTML = others.map(function(x,i){
-    return '<div class="sidebar-news-item" onclick="openNoticia('+x.id+')">'+(x.img?'<img src="'+x.img+'" style="width:52px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border-solid);">':'<div class="sidebar-news-num">0'+(i+1)+'</div>')+'<div><div class="sidebar-news-title">'+x.titulo+'</div><div class="sidebar-news-date">'+fmtDateES(x.fecha)+'</div></div></div>';
-  }).join('');
-  document.getElementById('noticia-sidebar-eventos').innerHTML = DB.eventos.slice(0,2).map(function(e){
-    return '<div class="sidebar-news-item" onclick="openEvento('+e.id+')"><div class="sidebar-news-num" style="font-size:18px;min-width:36px;text-align:center;line-height:1.1;"><div style="color:var(--gold)">'+dayStr(e.fecha)+'</div><div style="font-size:10px;color:var(--muted);font-family:\'Barlow Condensed\',sans-serif;letter-spacing:1px;">'+monthStr(e.fecha)+'</div></div><div><div class="sidebar-news-title">'+e.nombre+'</div><div class="sidebar-news-date">'+e.lugar+'</div></div></div>';
-  }).join('');
-  showPage('page-noticia');
-}
       <div class="ranking-cat-panel" id="cat-promesa">
         <div class="ranking-gender-tabs">
           <button class="ranking-gender-tab active" onclick="switchGender(this,'promesa-masc')">♂ Masculino</button>

@@ -87,114 +87,74 @@
       <div class="ticker-track" id="ticker-track"></div>
     </div>
   </div>
+function openNoticia(id){
+  var n = DB.noticias.find(function(x){ return x.id===id; });
+  if(!n) return;
 
-  <!-- NOTICIAS -->
-  <div id="noticias">
-    <div class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">Últimas <em>Noticias</em></h2>
-        <span class="see-all" onclick="document.getElementById('more-news-section').scrollIntoView({behavior:'smooth'})">Ver todas →</span>
-      </div>
-      <div id="news-grid" class="reveal news-grid"></div>
-    </div>
-    <div class="section" style="padding-top:0;" id="more-news-section">
-      <div class="section-header reveal">
-        <h2 class="section-title"><em>Más</em> Noticias</h2>
-      </div>
-      <div id="more-news-grid" class="reveal reveal-delay-1 more-news-grid"></div>
-    </div>
-  </div>
+  /* Incrementar visitas */
+  n.visitas = (n.visitas || 0) + 1;
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat-item reveal"><div class="stat-num" data-target="1247">0</div><div class="stat-label">Patinadores Activos</div></div>
-      <div class="stat-item reveal reveal-delay-1"><div class="stat-num" data-target="38">0</div><div class="stat-label">Competiciones 2026</div></div>
-      <div class="stat-item reveal reveal-delay-2"><div class="stat-num" data-target="17">0</div><div class="stat-label">Comunidades</div></div>
-      <div class="stat-item reveal reveal-delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">Récords Nacionales</div></div>
-    </div>
-  </div>
+  document.getElementById('noticia-breadcrumb-title').textContent = n.titulo.substring(0,40)+'…';
+  var heroImg = document.getElementById('noticia-hero-img');
+  if(n.img){ heroImg.src=n.img; heroImg.style.display='block'; }
+  else { heroImg.style.display='none'; }
+  document.getElementById('noticia-page-cat').className = 'page-noticia-category ' + catClass(n.cat);
+  document.getElementById('noticia-page-cat').textContent = n.cat;
+  document.getElementById('noticia-page-title').textContent = n.titulo;
 
-  <!-- EVENTOS -->
-  <div id="eventos">
-    <div class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">Próximos <em>Eventos</em></h2>
-        <span class="see-all" id="eventos-see-all" onclick="toggleVerMasEventos()">Ver todos →</span>
-      </div>
-      <div class="eventos-grid reveal" id="eventos-grid"></div>
-      <div class="eventos-show-more" id="eventos-show-more-btn" style="display:none;">
-        <button class="btn-show-more" onclick="toggleVerMasEventos()">
-          <span id="eventos-toggle-label">Ver más eventos ↓</span>
-        </button>
-      </div>
-    </div>
-  </div>
+  var autor = n.autor || 'Redacción RollerZone';
+  var seccion = n.seccion ? '<span style="color:var(--gold);font-size:11px;letter-spacing:1px;text-transform:uppercase;">'+n.seccion+'</span> · ' : '';
+  document.getElementById('noticia-page-meta').innerHTML =
+    seccion +
+    '<span>Por <strong>'+autor+'</strong></span>' +
+    '<span style="color:var(--muted)">· '+fmtDateES(n.fecha)+'</span>' +
+    (n.tiempo ? '<span style="color:var(--muted)">· '+n.tiempo+' lectura</span>' : '') +
+    '<span style="color:var(--muted)">· 👁 '+n.visitas+' visita'+(n.visitas===1?'':'s')+'</span>';
 
-  <!-- RANKING -->
-  <div class="ranking-section" id="ranking">
-    <div class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">Ranking <em>MVP RollerZone Spain</em></h2>
-        <a class="see-all" href="#">Ranking completo →</a>
-      </div>
-      <div class="ranking-cat-selector">
-        <button class="ranking-cat-btn active" onclick="switchCat(this,'cat-elite')">Élite <span class="ranking-cat-badge badge-elite">TOP</span></button>
-        <button class="ranking-cat-btn" onclick="switchCat(this,'cat-estrella')">Estrella <span class="ranking-cat-badge badge-estrella">U23</span></button>
-        <button class="ranking-cat-btn" onclick="switchCat(this,'cat-promesa')">Promesa <span class="ranking-cat-badge badge-promesa">JR</span></button>
-      </div>
-      <div class="ranking-cat-panel active" id="cat-elite">
-        <div class="ranking-gender-tabs">
-          <button class="ranking-gender-tab active" onclick="switchGender(this,'elite-masc')">♂ Masculino</button>
-          <button class="ranking-gender-tab" onclick="switchGender(this,'elite-fem')">♀ Femenino</button>
-        </div>
-        <div class="ranking-gender-panel active" id="elite-masc">
-          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">👑</span><span class="ranking-mvp-label">Élite Masculino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
-          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinador</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
-            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Chevi Guzmán</div><div class="racer-club">Celta Patin</div></td><td>Gijón PC</td><td><span class="pts">440</span></td><td><span class="delta up">↑ 3</span></td></tr>
-            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Daniel Milagros</div><div class="racer-club">Ciudad del turia</div></td><td>CD Gijón</td><td><span class="pts">418</span></td><td><span class="delta up">↑ 1</span></td></tr>
-            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇨🇴 Juan P. Estrada</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">401</span></td><td><span class="delta same">—</span></td></tr>
-            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Adrián Alonso</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">385</span></td><td><span class="delta down">↓ 1</span></td></tr>
-            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇨🇭 Livio Wenger</div><div class="racer-club">Valencia Speed</div></td><td>Valencia S.</td><td><span class="pts">370</span></td><td><span class="delta up">↑ 2</span></td></tr>
-          </tbody></table></div>
-        </div>
-        <div class="ranking-gender-panel" id="elite-fem">
-          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">👑</span><span class="ranking-mvp-label">Élite Femenino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
-          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinadora</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
-            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Lucía Martín Fdez.</div><div class="racer-club">Gijón Patín Club</div></td><td>Gijón PC</td><td><span class="pts">420</span></td><td><span class="delta up">↑ 3</span></td></tr>
-            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Ana Romero Vega</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">405</span></td><td><span class="delta same">—</span></td></tr>
-            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇨🇴 Valentina Ríos C.</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">388</span></td><td><span class="delta up">↑ 2</span></td></tr>
-            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Sara Gómez Fdez.</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">372</span></td><td><span class="delta down">↓ 1</span></td></tr>
-            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Marta Iglesias P.</div><div class="racer-club">Euskadi Patín</div></td><td>Euskadi P.</td><td><span class="pts">358</span></td><td><span class="delta up">↑ 1</span></td></tr>
-          </tbody></table></div>
-        </div>
-      </div>
-      <div class="ranking-cat-panel" id="cat-estrella">
-        <div class="ranking-gender-tabs">
-          <button class="ranking-gender-tab active" onclick="switchGender(this,'estrella-masc')">♂ Masculino</button>
-          <button class="ranking-gender-tab" onclick="switchGender(this,'estrella-fem')">♀ Femenino</button>
-        </div>
-        <div class="ranking-gender-panel active" id="estrella-masc">
-          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">⭐</span><span class="ranking-mvp-label" style="color:var(--blue)">Estrella Masculino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
-          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinador</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
-            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Roberto Cano</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">395</span></td><td><span class="delta up">↑ 2</span></td></tr>
-            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Marcos Fdez. Ríos</div><div class="racer-club">Club Astur Speed</div></td><td>Astur Speed</td><td><span class="pts">378</span></td><td><span class="delta up">↑ 1</span></td></tr>
-            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇪🇸 Iñigo Urrutia</div><div class="racer-club">Euskadi Patín</div></td><td>Euskadi P.</td><td><span class="pts">362</span></td><td><span class="delta same">—</span></td></tr>
-            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Carlos Blanco M.</div><div class="racer-club">Galicia Speed Club</div></td><td>Galicia SC</td><td><span class="pts">344</span></td><td><span class="delta down">↓ 2</span></td></tr>
-            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Pablo Cortés V.</div><div class="racer-club">Zaragoza Inline</div></td><td>Zgz Inline</td><td><span class="pts">331</span></td><td><span class="delta up">↑ 3</span></td></tr>
-          </tbody></table></div>
-        </div>
-        <div class="ranking-gender-panel" id="estrella-fem">
-          <div class="ranking-mvp-header"><span class="ranking-mvp-crown">⭐</span><span class="ranking-mvp-label" style="color:var(--blue)">Estrella Femenino · Top 5</span><span class="ranking-mvp-desc">Temporada 2026</span></div>
-          <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Patinadora</th><th>Club</th><th>Puntos MVP</th><th>±</th></tr></thead><tbody>
-            <tr><td><span class="pos-num top1">1</span></td><td><div class="racer-name">🇪🇸 Carla Díaz Vega</div><div class="racer-club">Barcelona Inline</div></td><td>BCN Inline</td><td><span class="pts">380</span></td><td><span class="delta up">↑ 1</span></td></tr>
-            <tr><td><span class="pos-num top2">2</span></td><td><div class="racer-name">🇪🇸 Noa Fernández R.</div><div class="racer-club">Galicia Speed Club</div></td><td>Galicia SC</td><td><span class="pts">362</span></td><td><span class="delta same">—</span></td></tr>
-            <tr><td><span class="pos-num top3">3</span></td><td><div class="racer-name">🇪🇸 Alba Torres Gil</div><div class="racer-club">Sevilla Rollers</div></td><td>Sevilla R.</td><td><span class="pts">345</span></td><td><span class="delta up">↑ 2</span></td></tr>
-            <tr><td><span class="pos-num">4</span></td><td><div class="racer-name">🇪🇸 Paula Ibáñez M.</div><div class="racer-club">Zaragoza Inline</div></td><td>Zgz Inline</td><td><span class="pts">328</span></td><td><span class="delta down">↓ 1</span></td></tr>
-            <tr><td><span class="pos-num">5</span></td><td><div class="racer-name">🇪🇸 Irene Navarro P.</div><div class="racer-club">Madrid Patin Race</div></td><td>Madrid PR</td><td><span class="pts">310</span></td><td><span class="delta up">↑ 1</span></td></tr>
-          </tbody></table></div>
-        </div>
-      </div>
+  document.getElementById('noticia-page-lead').textContent = n.excerpt || 'Sigue leyendo para descubrir todos los detalles.';
+  var body = '';
+  if(n.contenido && n.contenido.trim()){
+    n.contenido.split('\n').forEach(function(line){
+      line = line.trim(); if(!line) return;
+      if(line.startsWith('### ')) body += '<h3>' + line.slice(4) + '</h3>';
+      else if(line.startsWith('> ')) body += '<blockquote>' + line.slice(2) + '</blockquote>';
+      else body += '<p>' + line + '</p>';
+    });
+  } else {
+    body = '<p>El patinaje de velocidad en España vive uno de sus mejores momentos en términos de nivel competitivo y participación. Los datos de esta temporada confirman una tendencia al alza que los expertos llevan años prediciendo.</p>';
+    body += '<h3>Un momento histórico</h3>';
+    body += '<p>La combinación de nuevas instalaciones, metodologías de entrenamiento renovadas y patinadores con talento excepcional está dando sus frutos. Las cifras hablan por sí solas: más de 1.200 patinadores federados, 38 competiciones previstas para 2026.</p>';
+    body += '<blockquote>El nivel que estamos viendo este año es simplemente increíble. Nunca habíamos tenido tanta densidad de talento en la élite nacional.</blockquote>';
+    body += '<p>Los clubs tradicionales como el Gijón Patín Club, Barcelona Inline o Sevilla Rollers siguen siendo los pilares del patinaje español, pero nuevas organizaciones están emergiendo con fuerza.</p>';
+  }
+  document.getElementById('noticia-page-body').innerHTML = body;
+
+  /* Botones compartir — sin Twitter, con Instagram (copia enlace) */
+  var pageUrl = encodeURIComponent(window.location.href);
+  var pageTitle = encodeURIComponent(n.titulo);
+  document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u='+pageUrl;
+  document.getElementById('share-whatsapp').href = 'https://wa.me/?text='+pageTitle+'%20'+pageUrl;
+  document.getElementById('share-instagram').onclick = function(){
+    navigator.clipboard.writeText(decodeURIComponent(window.location.href)).then(function(){
+      var btn = document.getElementById('share-instagram');
+      var orig = btn.innerHTML;
+      btn.innerHTML = '✓ Enlace copiado';
+      setTimeout(function(){ btn.innerHTML = orig; }, 2000);
+    });
+    return false;
+  };
+
+  var tagArr = [n.cat, 'Patinaje', 'España', '2026'];
+  document.getElementById('noticia-page-tags').innerHTML = tagArr.map(function(t){ return '<span class="page-tag">'+t+'</span>'; }).join('');
+  var others = DB.noticias.filter(function(x){ return x.id!==id; }).slice(0,4);
+  document.getElementById('noticia-sidebar-list').innerHTML = others.map(function(x,i){
+    return '<div class="sidebar-news-item" onclick="openNoticia('+x.id+')">'+(x.img?'<img src="'+x.img+'" style="width:52px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border-solid);">':'<div class="sidebar-news-num">0'+(i+1)+'</div>')+'<div><div class="sidebar-news-title">'+x.titulo+'</div><div class="sidebar-news-date">'+fmtDateES(x.fecha)+'</div></div></div>';
+  }).join('');
+  document.getElementById('noticia-sidebar-eventos').innerHTML = DB.eventos.slice(0,2).map(function(e){
+    return '<div class="sidebar-news-item" onclick="openEvento('+e.id+')"><div class="sidebar-news-num" style="font-size:18px;min-width:36px;text-align:center;line-height:1.1;"><div style="color:var(--gold)">'+dayStr(e.fecha)+'</div><div style="font-size:10px;color:var(--muted);font-family:\'Barlow Condensed\',sans-serif;letter-spacing:1px;">'+monthStr(e.fecha)+'</div></div><div><div class="sidebar-news-title">'+e.nombre+'</div><div class="sidebar-news-date">'+e.lugar+'</div></div></div>';
+  }).join('');
+  showPage('page-noticia');
+}
       <div class="ranking-cat-panel" id="cat-promesa">
         <div class="ranking-gender-tabs">
           <button class="ranking-gender-tab active" onclick="switchGender(this,'promesa-masc')">♂ Masculino</button>
